@@ -1,0 +1,103 @@
+.section.noticias {
+    padding: 20px 0;
+    background-image: url('../images/BACKGROUND-cabeçalhos.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 600px;
+}
+
+.section.noticias .content {
+    padding: 20px 0;
+}
+
+.noticias .logo-section {
+    position: relative;
+    text-align: center;
+}
+
+.noticias .logo-section img {
+    margin-top: -100px;
+}
+
+.logo-section .titulo {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.logo-section .titulo h1 {
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 900;
+}
+
+.grid-noticias {
+    width: 100%;
+    margin: 40px auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.grid-noticias::before {
+    content: ".";
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+    width: 0;
+    height: 0;
+}
+
+.grid-noticias .post-item.featured {
+    padding-right: 4rem;
+    height: 344px;
+    box-sizing: border-box;
+}
+
+.grid-noticias .post-item {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 162px;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 1rem 3rem 1rem 1rem;
+    position: relative;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    background-color: #6c6c6c;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+    .grid-noticias {
+        display: flex;
+        flex-direction: row;
+    }
+    .featured-posts {
+        width: auto;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 0;
+    }
+    .featured-posts .grid-noticias .post-item.featured {
+        height: 142px;
+    }
+    .featured-posts .no-pad {
+        display: flex;
+        flex-direction: row;
+    }
+    .featured-posts .grid-noticias .post-item {
+        width: 240px;
+        margin-right: 8px;
+        height: 142px;
+    }
+}

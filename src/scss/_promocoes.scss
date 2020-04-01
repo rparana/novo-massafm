@@ -1,0 +1,34 @@
+.section.promocoes {
+    padding: 20px 0;
+}
+
+.section.promocoes .content {
+    padding: 20px 0;
+}
+
+.promocoes .carrossel {
+    height: 400px;
+}
+
+.lista-promocoes {
+    list-style-type: none;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.promocao-item {
+    padding: 20px 10px;
+    width: 340px;
+    min-width: 210px;
+    height: 450px;
+}
+
+.promocao-item .box {
+    height: 100%;
+}
+
+.promocoes .btn-card {
+    font-size: 16px;
+}

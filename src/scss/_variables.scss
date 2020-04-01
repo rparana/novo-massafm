@@ -1,0 +1,43 @@
+$mfm-amarelo: #fff203;
+$mfm-laranja: #e8b200;
+$mfm-magenta: #b50091;
+$mfm-roxo: #6318af;
+$mfm-cinza: #606060;
+$mfm-cinza-claro: #cccccc;
+$white:#ffffff;
+$black:#000000;
+$twitter-color: #4099ff;
+$facebook-color: #3B5998;
+$youtube-color: #ff0000;
+$whatsapp-color: #34af23;
+$color-a-hover: $mfm-roxo;
+$body-bg: $white !default;
+$theme-colors: ( "mfm-amarelo": $mfm-amarelo, "mfm-laranja": $mfm-laranja, "mfm-magenta": $mfm-magenta, "mfm-roxo": $mfm-roxo, "mfm-cinza": $mfm-cinza, "mfm-cinza-claro": $mfm-cinza-claro);
+$fonts-path: '../fonts/';
+$font-nunito: 'Nunito',
+sans-serif;
+$font-roboto: 'Roboto',
+sans-serif;
+$font-myriad:'Myriad Pro',
+sans-serif;
+$font-yanone: 'Yanone Kaffeesatz',
+sans-serif;
+$font-family-massaFM: $font-myriad,
+$font-yanone,
+$font-roboto;
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+$spacer: 1rem !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge( ( 0: 0, 1: ($spacer * .25), 2: ($spacer * .5), 3: $spacer, 4: ($spacer * 1.5), 5: ($spacer * 3)), $spacers);
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px) !default;
+$enable-deprecation-messages: true !default;
+$enable-gradients: true !default;

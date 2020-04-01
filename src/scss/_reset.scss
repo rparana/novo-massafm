@@ -1,0 +1,53 @@
+/* RESET
+--------*/
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family-massaFM;
+    font-size: inherit;
+}
+
+input,
+select,
+iframe,
+button {
+    border: none;
+    font-family: $font-family-massaFM;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: $color-a-hover;
+}
+
+img {
+    max-width: 100%;
+    border: none;
+}

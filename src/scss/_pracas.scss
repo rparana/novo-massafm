@@ -1,0 +1,26 @@
+.topo-praca {
+    background: $mfm-amarelo;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: inset 0px -2px 10px rgba(16, 26, 50, .4);
+}
+
+.praca {
+    justify-self: end;
+    color: $mfm-cinza;
+    line-height: 20px;
+}
+
+.praca .mdi {
+    display: inline-flex;
+    height: 24px;
+    width: 24px;
+    font-size: 20px;
+    border: 1px solid $mfm-cinza;
+    border-radius: 6px;
+}
+
+.praca .mdi:hover {
+    color: $mfm-amarelo;
+    background: $mfm-roxo;
+}

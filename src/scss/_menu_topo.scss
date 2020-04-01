@@ -1,0 +1,120 @@
+/* Menu */
+
+.section-menu-topo .content {
+    align-content: center;
+}
+
+.section-menu-topo .menu-topo a {
+    color: rgba(0, 0, 0, .5);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.section-menu-topo .menu-topo a:hover {
+    color: rgba(0, 0, 0, 1);
+}
+
+.section-menu-topo .menu-topo.active {
+    left: 0;
+}
+
+@media (max-width: 767.9px) {
+    .section-menu-topo .logo {
+        background-color: $white;
+        text-align: center;
+        width: 100%;
+        padding: 10px 10px;
+    }
+    .section-menu-topo .logo img {
+        padding: 10px 0;
+        max-width: 150px;
+    }
+    .section-menu-topo .menu-topo .close,
+    .section-menu-topo .nav-toggle {
+        color: $mfm-roxo;
+        font-size: 22px;
+    }
+    .section-menu-topo .menu-topo {
+        display: block;
+        background: $mfm-roxo linear-gradient(90deg, $mfm-roxo, $mfm-magenta) repeat-x !important;
+        width: 250px;
+        height: 100%;
+        position: fixed;
+        padding: 0px;
+        left: -100%;
+        transition: left 0.5s ease-in-out;
+        top: 0;
+        z-index: 10;
+    }
+    .section-menu-topo .menu-topo .nav {
+        width: 100%;
+    }
+    .section-menu-topo .menu-topo .nav ul li {
+        padding: 15px;
+        font-size: 20px;
+    }
+    .section-menu-topo .menu-topo .nav ul li:not(:last-of-type) {
+        border-bottom: 1px solid $mfm-laranja;
+    }
+    .section-menu-topo .menu-topo .nav ul li a {
+        color: $mfm-amarelo;
+    }
+    .section-menu-topo .social {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .section-menu-topo {
+        padding: 10px 0;
+        width: 100%;
+        margin: 10px 0px;
+    }
+    .section-menu-topo .nav-toggle,
+    .section-menu-topo .menu-topo .close {
+        display: none;
+    }
+    .menu-topo nav {
+        margin: auto;
+    }
+    .menu-topo .nav {
+        display: flex;
+        margin: 0 10px;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .section-menu-topo .social {
+        margin: auto;
+        color: $white;
+        padding: 0 5px 0 0;
+        font-size: 2.0em;
+    }
+    .section-menu-topo .menu-topo {
+        width: 100%;
+        display: flex;
+        align-content: center;
+    }
+    .section-menu-topo .social {
+        margin: auto;
+        color: $white;
+        padding: 0 5px;
+        font-size: 2.0em;
+    }
+    .section-menu-topo ul {
+        display: inline-flex;
+    }
+    .section-menu-topo .menu-topo li .icon {
+        display: none;
+    }
+    .section-menu-topo .menu-topo li {
+        padding: 0 5px;
+        font-family: $font-yanone;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 18px;
+    }
+}
+
+@import "social_topo";

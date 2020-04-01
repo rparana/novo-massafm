@@ -1,0 +1,18 @@
+@import "variables";
+@import "mixins/deprecate";
+@import "mixins/hover";
+@import "mixins/background-variant";
+@import "_fonts";
+@import "reset";
+@import "gerais";
+@import "carrossel";
+@import "pracas";
+@import "menu_topo";
+@import "banner_rotativo";
+@import "promocoes";
+@import "noticias";
+//auxiliares
+@import "auxiliares";
+@import "background";
+//import Material Icon
+@import '../../node_modules/material/scss/materialdesignicons.scss';
