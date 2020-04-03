@@ -1,10 +1,16 @@
-var scrollPromoEsq = document.querySelector('a.scroll-promo.esq');
-var scrollPromoDir = document.querySelector('a.scroll-promo.dir');
-var listaPromocoes = document.querySelector('.promocoes .carrossel-items');
-var btnMenu = document.querySelector('.nav-toggle');
-var btnClose = document.querySelector('.close');
-var header = document.querySelector('.header');
-var menu = document.querySelector('.menu-topo');
+import player from "./player.js";
+
+function qs(s) { return document.querySelector(s) }
+
+var scrollPromoEsq = qs('a.scroll-promo.esq');
+var scrollPromoDir = qs('a.scroll-promo.dir');
+var listaPromocoes = qs('.promocoes .carrossel-items');
+var btnMenu = qs('.nav-toggle');
+var btnClose = qs('.close');
+var playerSection = qs('.section.player');
+var btnMinMaxPlayer = qs('.btn-min-max');
+var btnClosePlayer = qs('.operate-box .btn-close');
+var menu = qs('.menu-topo');
 
 btnMenu.addEventListener('click', (event) => {
     event.preventDefault();
@@ -15,6 +21,18 @@ btnClose.addEventListener('click', (event) => {
     event.preventDefault();
     menu.classList.toggle('active');
 })
+btnClosePlayer.addEventListener('click', (event) => {
+    event.preventDefault();
+    playerSection.style = 'display: none;';
+})
+
+btnMinMaxPlayer.addEventListener('click', (event) => {
+    event.preventDefault();
+    playerSection.classList.toggle('minimized');
+    btnMinMaxPlayer.classList.toggle('mdi-chevron-down');
+    btnMinMaxPlayer.classList.toggle('mdi-chevron-up');
+})
+
 
 document.addEventListener('DOMContentLoaded', docReady);
 
