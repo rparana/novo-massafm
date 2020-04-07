@@ -7,42 +7,42 @@
 
 .section.flyer-player {
     position: fixed;
+    display: grid;
+    grid-template-areas: "controle" "player";
     width: 100%;
-    float: left;
-    bottom: 0;
-    left: 0;
     z-index: 500;
+    -webkit-transition: top 0.5s ease-in-out;
     transition: top 0.5s ease-in-out;
     -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
     transition: all 0.3s;
+    left: 0;
+    bottom: 0;
 }
 
 .section.player {
+    grid-area: player;
     overflow: hidden;
-    background: $mfm-roxo;
-    background: linear-gradient(90deg, rgba($color: $mfm-roxo, $alpha: .9), rgba($color: $mfm-magenta, $alpha: .9)) repeat-x;
-    height: 20vh;
-    //background: linear-gradient(90deg, rgba(99, 24, 175, .9) 0%, rgba(181, 0, 145, .9) 100%);
+    background: url('../images/logo-bg-player.png') no-repeat left 40px top -10px, -webkit-gradient(linear, left top, right top, from(rgba($color: $mfm-roxo, $alpha: .9)), to(rgba($color: $mfm-magenta, $alpha: .9))) repeat-x;
+    background: url('../images/logo-bg-player.png') no-repeat left 40px top -10px, linear-gradient(90deg, rgba($color: $mfm-roxo, $alpha: .9), rgba($color: $mfm-magenta, $alpha: .9)) repeat-x;
+    //min-height: 20vh;
 }
 
 .section.player .titulo-img {
     margin-top: -10px;
 }
 
-.section.player.minimized .titulo-img {
-    display: none;
-}
-
 .section.flyer-player .operate-box {
+    grid-area: controle;
+    justify-self: end;
     background-color: rgba($color: $mfm-cinza, $alpha: .8);
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
     align-content: center;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px 0 0 0px;
     width: 50px;
-    margin: 0px 0 0 auto;
+    //margin: 0px 0 0 auto;
     cursor: pointer;
 }
 
@@ -51,154 +51,195 @@
     font-size: 18px;
 }
 
-.section.player.minimized {
-    height: 30px !important;
-    background: rgba($color: $mfm-cinza, $alpha: 1);
+.player-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 10px 0px;
 }
 
-
-/* Player PodCast 
-******************/
-
-.podcast-item-player {
-    display: grid;
-    grid-template-areas: "controls" "seekbar";
-    grid-template-rows: 70% 30%;
-    min-width: 200px;
-    padding: 0px 10px;
+.player-box span {
+    cursor: pointer;
 }
 
-.podcast-item-player .controls {
-    grid-area: controls;
+.player-box .box-logo-play {
     display: flex;
     justify-content: center;
     align-content: center;
+    max-height: 88px;
+    padding: 0px 10px;
+    margin: auto 10px;
 }
 
-.controls .border-gradient {
-    margin: auto;
+.player-box .box-logo-play img {
+    max-width: 88px;
+    z-index: 2;
 }
 
-.podcast-item-player .btn-play {
-    background-color: $white;
-    color: $mfm-roxo;
-    margin: auto;
-    border-radius: 50%;
+.player-box .box-logo-play span {
+    color: $white;
+    font-weight: 200;
+    font-size: 64px;
+    margin: auto 0px auto -15px;
 }
 
-.podcast-item-player .btn-play h3 {
-    font-size: 72px;
-    background: -moz-linear-gradient(top, #e72c83 0%, #a742c6 100%);
-    background: -webkit-linear-gradient(top, #e72c83 0%, #a742c6 100%);
-    background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+.player-box .player-title-control {
+    display: flex;
+    margin: 0px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.podcast-item-player .btn-play h3 .mdi:before {
-    display: initial;
+.player-box .player-info {
+    padding: 20px;
 }
 
-.podcast-item-player .progresso {
-    grid-area: seekbar;
+.player-box .player-info p {
+    font-size: 14px;
+    color: $white;
+    font-weight: 200;
+}
+
+.player-box .player-info h3 {
+    font-size: 18px;
+    color: $mfm-amarelo;
+    font-family: $font-primary;
+}
+
+.player-box .player-info-control {
+    padding: 10px;
+}
+
+.player-box .player-info-control .progresso {
     display: grid;
     grid-template-areas: "seekbar seekbar" "current-duration total-duration";
     grid-template-columns: 50% 50%;
 }
 
-.podcast-item-player .progresso .current-duration {
+.player-box .player-info-control .progresso .seekbar {
+    grid-area: seekbar;
+    width: 100%;
+    margin: 12px 0 0;
+    padding: 10px 0px 5px;
+}
+
+.player-box .player-info-control .progresso .current-duration {
     grid-area: current-duration;
     width: 50%;
 }
 
-.podcast-item-player .progresso .total-duration {
+.player-box .player-info-control .progresso .total-duration {
     grid-area: total-duration;
     width: 50%;
     justify-self: flex-end;
     text-align: right;
 }
 
-.podcast-item-player .progresso .current-duration,
-.podcast-item-player .progresso .total-duration {
+.player-box .player-info-control .progresso .current-duration,
+.player-box .player-info-control .progresso .total-duration {
     font-size: 12px;
-    color: $mfm-cinza;
+    color: $white;
 }
 
-.seekbar {
-    grid-area: seekbar;
-    width: 100%;
-    margin: 12px 0 0;
-    padding: 10px 0px 5px;
-    position: relative;
+.player-info-control .volume-control {
+    display: flex;
+    padding: 10px 0px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.seekbar-progress {
-    height: 5px;
-    background-color: #f5f5f5;
-    background-image: linear-gradient(to bottom, #ebebeb 0%, #f5f5f5 100%);
-    background-repeat: repeat-x;
-    border-radius: 6px;
-    //margin: 0 5px 0px 0px;
+.player-info-control .volume-control span {
+    font-size: 18px;
+    color: $white;
+    margin-right: 10px;
 }
 
-.seekbar-progress [role="progressbar"] {
+.player-box .player-anuncio {
+    margin: auto 10px;
+}
+
+
+/* Player Rodapé Minimizado
+***********/
+
+.section.player.minimized {
+    height: 60px !important;
+    background: rgba($color: $mfm-cinza, $alpha: .8);
+    max-width: 400px;
+    justify-self: end;
+    border-radius: 10px 0 0 0px;
+}
+
+.section.player.minimized .content {
+    display: contents;
     height: 100%;
-    position: relative;
-    background: $mfm-roxo linear-gradient(90deg, $mfm-roxo, $mfm-magenta) repeat-x !important;
-    border-radius: 6px;
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
 }
 
-.seekbar-progress [role="progressbar"]:after {
-    content: " ";
-    display: block;
-    width: 13px;
-    height: 13px;
-    position: absolute;
-    top: -4px;
-    right: -9px;
-    background-color: #888;
-    background-image: linear-gradient(to bottom, #ccc 0%, #888 100%);
-    background-repeat: repeat-x;
-    border: 1px solid #999;
-    border-radius: 20px;
+.section.player.minimized .titulo-img {
+    display: none;
 }
 
-.seekbar input[type="range"] {
-    width: 100%;
+.section.player.minimized .player-box {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    margin: auto 0px;
     height: 100%;
-    margin: 0;
-    outline: 0;
-    border: 0;
 }
 
-.seekbar input[type="range"]::-webkit-slider-thumb {
-    display: block;
-    border-radius: 50%;
-    background-color: $mfm-roxo;
+.section.player.minimized .player-box .box-logo-play {
+    justify-content: flex-start;
+    align-content: flex-start;
+    padding: 0px 5px;
+    margin: auto;
 }
 
-
-/*
- Mozilla:
- https://developer.mozilla.org/en-US/docs/User:Jonathan_Watt/range
-*/
-
-.seekbar input[type="range"]::-moz-range-thumb {
-    display: block;
-    width: 48px;
-    height: 48px;
-    background: transparent;
-    border: 0;
+.section.player.minimized .player-box .box-logo-play img {
+    display: none;
 }
 
-.seekbar input[type="range"]::-moz-range-track {
-    background: transparent;
-    border: 0;
+.section.player.minimized .player-box .box-logo-play span {
+    font-size: 42px;
+    margin: auto;
 }
 
-.seekbar input[type="range"]::-moz-focus-outer {
-    border: 0;
+.section.player.minimized .player-box .player-title-control {
+    margin: 0px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+.section.player.minimized .player-box .player-info {
+    padding: 5px;
+}
+
+.section.player.minimized .player-box .player-info p {
+    font-size: 12px;
+}
+
+.section.player.minimized .player-box .player-info h3 {
+    font-size: 14px;
+}
+
+.section.player.minimized .player-box .player-info-control {
+    display: flex;
+    padding: 5px;
+}
+
+.section.player.minimized .player-info-control .volume-control {
+    margin-left: 10px;
+}
+
+.section.player.minimized .player-info-control .volume-control span {
+    margin-right: 0px;
+}
+
+.section.player.minimized .player-info-control .volume-control .volume-range {
+    display: none;
+}
+
+.section.player.minimized .player-box .player-anuncio {
+    display: none;
 }

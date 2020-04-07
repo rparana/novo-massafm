@@ -1,224 +1,189 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @font-face {
-    font-family: 'Myriad Pro';
-    src: url($fonts-path +'myriad_pro/MYRIADPRO-Light.otf');
-    src: url($fonts-path +'myriad_pro/MYRIADPRO-Light.otf') format('otf'), url($fonts-path +'myriad_pro/MYRIADPRO-Light.woff') format('woff');
-    font-weight: 200;
+    font-family: 'Open Sans';
+    src: url($fonts-path +'opensans/opensans-light-webfont.woff2') format('woff2'), url($fonts-path +'opensans/opensans-light-webfont.woff') format('woff');
+    font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Myriad Pro';
-    src: url($fonts-path +'myriad_pro/MYRIADPRO-REGULAR.otf');
-    src: url($fonts-path +'myriad_pro/MYRIADPRO-REGULAR.otf') format('otf'), url($fonts-path +'myriad_pro/MYRIADPRO-REGULAR.woff') format('woff');
+    font-family: 'Open Sans';
+    src: url($fonts-path +'opensans/opensans-lightitalic-webfont.woff2') format('woff2'), url($fonts-path +'opensans/opensans-lightitalic-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url($fonts-path +'opensans/opensans-regular-webfont.woff2') format('woff2'), url($fonts-path +'opensans/opensans-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Myriad Pro';
-    src: url($fonts-path +'myriad_pro/MYRIADPRO-SEMIBOLD.otf');
-    src: url($fonts-path +'myriad_pro/MYRIADPRO-SEMIBOLD.woff') format("woff"), url($fonts-path +'myriad_pro/MYRIADPRO-SEMIBOLD.otf') format("otf");
-    font-weight: 500;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Myriad Pro';
-    src: url($fonts-path +'myriad_pro/MYRIADPRO-SEMIBOLDIT.otf');
-    src: url($fonts-path +'myriad_pro/MYRIADPRO-SEMIBOLDIT.woff') format("woff"), url($fonts-path +'myriad_pro/MYRIADPRO-SEMIBOLDIT.otf') format("otf");
-    font-weight: 500;
-    font-style: italic
-}
-
-@font-face {
-    font-family: 'Myriad Pro';
-    src: url($fonts-path +'myriad_pro/MYRIADPRO-BOLD.otf');
-    src: url($fonts-path +'myriad_pro/MYRIADPRO-BOLD.woff') format("woff"), url($fonts-path +'myriad_pro/MYRIADPRO-BOLD.otf') format("otf");
-    font-weight: 700;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Myriad Pro';
-    src: url($fonts-path +'myriad_pro/MYRIADPRO-BOLDIT.otf');
-    src: url($fonts-path +'myriad_pro/MYRIADPRO-BOLDIT.woff') format("woff"), url($fonts-path +'myriad_pro/MYRIADPRO-BOLDIT.otf') format("otf");
-    font-weight: 700;
-    font-style: italic
-}
-
-@font-face {
-    font-family: 'Yanone Kaffeesatz';
-    src: url($fonts-path +'YanoneKaffeesatz/YanoneKaffeesatz-ExtraLight.ttf') format("truetype");
-    src: url($fonts-path +'YanoneKaffeesatz/yanonekaffeesatz-extralight-webfont.woff2') format('woff2'), url($fonts-path +'YanoneKaffeesatz/yanonekaffeesatz-extralight-webfont.woff') format('woff');
-    font-weight: 200;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Yanone Kaffeesatz';
-    src: url($fonts-path +'YanoneKaffeesatz/YanoneKaffeesatz-Light.ttf') format("truetype");
-    src: url($fonts-path +'YanoneKaffeesatz/yanonekaffeesatz-light-webfont.woff2') format('woff2'), url($fonts-path +'YanoneKaffeesatz/yanonekaffeesatz-light-webfont.woff') format('woff');
-    font-weight: 300;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Yanone Kaffeesatz';
-    src: url($fonts-path +'YanoneKaffeesatz/YanoneKaffeesatz-Regular.otf');
-    src: url($fonts-path +'YanoneKaffeesatz/YanoneKaffeesatz-Regular.ttf') format("truetype"), url($fonts-path +'YanoneKaffeesatz/yanonekaffeesatz-regular-webfont.woff2') format('woff2'), url($fonts-path +'YanoneKaffeesatz/yanonekaffeesatz-regular-webfont.woff') format('woff');
-    font-weight: 400;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Yanone Kaffeesatz';
-    src: url($fonts-path +'YanoneKaffeesatz/YanoneKaffeesatz-Medium.ttf');
-    src: url($fonts-path +'YanoneKaffeesatz/YanoneKaffeesatz-Medium.ttf') format("truetype");
-    font-weight: 500;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Yanone Kaffeesatz';
-    src: url($fonts-path +'YanoneKaffeesatz/YanoneKaffeesatz-SemiBold.ttf');
-    src: url($fonts-path +'YanoneKaffeesatz/YanoneKaffeesatz-SemiBold.ttf') format("truetype");
-    font-weight: 600;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Yanone Kaffeesatz';
-    src: url($fonts-path +'YanoneKaffeesatz/YanoneKaffeesatz-Bold.otf');
-    src: url($fonts-path +'YanoneKaffeesatz/YanoneKaffeesatz-Bold.ttf') format("truetype"), url($fonts-path +'YanoneKaffeesatz/yanonekaffeesatz-bold-webfont.woff2') format('woff2'), url($fonts-path +'YanoneKaffeesatz/yanonekaffeesatz-bold-webfont.woff') format('woff');
-    font-weight: 700;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'Nunito';
-    font-style: normal;
+    font-family: 'Open Sans';
+    src: url($fonts-path +'opensans/opensans-italic-webfont.woff2') format('woff2'), url($fonts-path +'opensans/opensans-italic-webfont.woff') format('woff');
     font-weight: normal;
-    src: url($fonts-path +'Nunito/Nunito-Regular.ttf') format("truetype");
-    src: local('Nunito'), url($fonts-path +'Nunito/Nunito-Regular.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Nunito';
     font-style: italic;
-    font-weight: normal;
-    src: url($fonts-path +'Nunito/Nunito-Italic.ttf') format("truetype");
-    src: local('Nunito'), url($fonts-path +'Nunito/Nunito-Italic.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 200;
-    src: url($fonts-path +'Nunito/Nunito-ExtraLight.ttf') format("truetype");
-    src: local('Nunito'), url($fonts-path +'Nunito/Nunito-ExtraLight.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Nunito';
-    font-style: italic;
-    font-weight: 200;
-    src: url($fonts-path +'Nunito/Nunito-ExtraLightItalic.ttf') format("truetype");
-    src: local('Nunito'), url($fonts-path +'Nunito/Nunito-ExtraLightItalic.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 300;
-    src: url($fonts-path +'Nunito/Nunito-Light.ttf') format("truetype");
-    src: local('Nunito'), url($fonts-path +'Nunito/Nunito-Light.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Nunito';
-    font-style: italic;
-    font-weight: 300;
-    src: url($fonts-path +'Nunito/Nunito-LightItalic.ttf') format("truetype");
-    src: local('Nunito'), url($fonts-path +'Nunito/Nunito-LightItalic.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Nunito';
-    font-style: normal;
+    font-family: 'Open Sans';
+    src: url($fonts-path +'opensans/opensans-semibold-webfont.woff2') format('woff2'), url($fonts-path +'opensans/opensans-semibold-webfont.woff') format('woff');
     font-weight: 600;
-    src: url($fonts-path +'Nunito/Nunito-SemiBold.ttf') format("truetype");
-    src: local('Nunito'), url($fonts-path +'Nunito/Nunito-SemiBold.woff') format('woff');
+    font-style: normal;
 }
 
 @font-face {
-    font-family: 'Nunito';
-    font-style: italic;
+    font-family: 'Open Sans';
+    src: url($fonts-path +'opensans/opensans-semibolditalic-webfont.woff2') format('woff2'), url($fonts-path +'opensans/opensans-semibolditalic-webfont.woff') format('woff');
     font-weight: 600;
-    src: url($fonts-path +'Nunito/Nunito-SemiBoldItalic.ttf') format("truetype");
-    src: local('Nunito'), url($fonts-path +'Nunito/Nunito-SemiBoldItalic.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 700;
-    src: url($fonts-path +'Nunito/Nunito-Bold.ttf') format("truetype");
-    src: local('Nunito'), url($fonts-path +'Nunito/Nunito-Bold.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Nunito';
     font-style: italic;
-    font-weight: 700;
-    src: url($fonts-path +'Nunito/Nunito-BoldItalic.ttf') format("truetype");
-    src: local('Nunito'), url($fonts-path +'Nunito/Nunito-BoldItalic.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Nunito';
+    font-family: 'Open Sans';
+    src: url($fonts-path +'opensans/opensans-bold-webfont.woff2') format('woff2'), url($fonts-path +'opensans/opensans-bold-webfont.woff') format('woff');
+    font-weight: 700;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url($fonts-path +'opensans/opensans-bolditalic-webfont.woff2') format('woff2'), url($fonts-path +'opensans/opensans-bolditalic-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url($fonts-path +'opensans/opensans-extrabold-webfont.woff2') format('woff2'), url($fonts-path +'opensans/opensans-extrabold-webfont.woff') format('woff');
     font-weight: 800;
-    src: url($fonts-path +'Nunito/Nunito-ExtraBold.ttf') format("truetype");
-    src: local('Nunito'), url($fonts-path +'Nunito/Nunito-ExtraBold.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Nunito';
-    font-style: italic;
-    font-weight: 800;
-    src: url($fonts-path +'Nunito/Nunito-ExtraBoldItalic.ttf') format("truetype");
-    src: local('Nunito'), url($fonts-path +'Nunito/Nunito-ExtraBoldItalic.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Nunito';
     font-style: normal;
-    font-weight: 900;
-    src: url($fonts-path +'Nunito/Nunito-Black.ttf') format("truetype");
-    src: local('Nunito'), url($fonts-path +'Nunito/Nunito-Black.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Nunito';
+    font-family: 'Open Sans';
+    src: url($fonts-path +'opensans/opensans-extrabolditalic-webfont.woff2') format('woff2'), url($fonts-path +'opensans/opensans-extrabolditalic-webfont.woff') format('woff');
+    font-weight: 800;
     font-style: italic;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-thin-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-thin-webfont.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-thinitalic-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-thinitalic-webfont.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-light-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-light-webfont.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-lightitalic-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-lightitalic-webfont.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-book-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-book-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-bookitalic-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-bookitalic-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-regular-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-italic-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-medium-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-mediumitalic-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-mediumitalic-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-bold-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-bolditalic-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-bolditalic-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-heavy-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-heavy-webfont.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-heavyitalic-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-heavyitalic-webfont.woff') format('woff');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-black-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-black-webfont.woff') format('woff');
     font-weight: 900;
-    src: url($fonts-path +'Nunito/Nunito-BlackItalic.ttf') format("truetype");
-    src: local('Nunito'), url($fonts-path +'Nunito/Nunito-BlackItalic.woff') format('woff');
+    font-style: normal;
 }
 
-.text-myriad {
-    font-family: $font-myriad !important;
+@font-face {
+    font-family: 'Filson Soft';
+    src: url($fonts-path +'filsonsoft/filsonsoft-blackitalic-webfont.woff2') format('woff2'), url($fonts-path +'filsonsoft/filsonsoft-blackitalic-webfont.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
 }
 
-.text-yanone {
-    font-family: $font-yanone !important;
+.text-filson-soft {
+    font-family: $font-filson-soft !important;
 }
 
-.text-roboto {
-    font-family: $font-roboto !important;
-}
-
-.text-nunito {
-    font-family: $font-nunito !important;
+.text-open-sans {
+    font-family: $font-open-sans !important;
 }

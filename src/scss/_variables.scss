@@ -14,17 +14,14 @@ $color-a-hover: $mfm-roxo;
 $body-bg: $white !default;
 $theme-colors: ( "mfm-amarelo": $mfm-amarelo, "mfm-laranja": $mfm-laranja, "mfm-magenta": $mfm-magenta, "mfm-roxo": $mfm-roxo, "mfm-cinza": $mfm-cinza, "mfm-cinza-claro": $mfm-cinza-claro);
 $fonts-path: '../fonts/';
-$font-nunito: 'Nunito',
-sans-serif;
-$font-roboto: 'Roboto',
-sans-serif;
-$font-myriad:'Myriad Pro',
-sans-serif;
-$font-yanone: 'Yanone Kaffeesatz',
-sans-serif;
-$font-family-massaFM: $font-myriad,
-$font-yanone,
-$font-roboto;
+$font-filson-soft: 'Filson Soft';
+$font-open-sans: 'Open Sans';
+$font-sans-serif:sans-serif;
+$font-family-massaFM: $font-filson-soft,
+$font-open-sans,
+$font-sans-serif;
+$font-primary: $font-filson-soft;
+$font-secundary: $font-open-sans;
 // Spacing
 //
 // Control the default styling of most Bootstrap elements by modifying these

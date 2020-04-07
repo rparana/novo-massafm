@@ -6,6 +6,15 @@
 }
 
 .praca {
+    font-family: $font-primary;
+    font-size: 12px;
+    justify-self: end;
+    color: $mfm-cinza;
+    line-height: 20px;
+}
+
+.praca a {
+    font-weight: 600;
     justify-self: end;
     color: $mfm-cinza;
     line-height: 20px;

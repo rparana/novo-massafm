@@ -13,14 +13,19 @@
 }
 
 .section-menu-topo .menu-topo a:hover {
-    color: rgba(0, 0, 0, 1);
+    color: $mfm-roxo;
 }
 
 .section-menu-topo .menu-topo.active {
     left: 0;
 }
 
-@media (max-width: 767.9px) {
+.section-menu-topo .menu-topo li {
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 767.9px) {
     .section-menu-topo .logo {
         background-color: $white;
         text-align: center;
@@ -53,7 +58,7 @@
     }
     .section-menu-topo .menu-topo .nav ul li {
         padding: 15px;
-        font-size: 20px;
+        font-size: 12px;
     }
     .section-menu-topo .menu-topo .nav ul li:not(:last-of-type) {
         border-bottom: 1px solid $mfm-laranja;
@@ -110,10 +115,6 @@
     }
     .section-menu-topo .menu-topo li {
         padding: 0 5px;
-        font-family: $font-yanone;
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 18px;
     }
 }
 

@@ -1,6 +1,6 @@
 .banner-slide {
-    width: 100vw;
-    height: 420px;
+    width: 100%;
+    height: 500px;
     position: relative;
     overflow: hidden;
     border-bottom: 3px solid $mfm-amarelo;
@@ -14,8 +14,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 420px;
-    width: 100vw;
+    height: 500px;
+    width: 100%;
 }
 
 .banner-slide .banner-background .banner-overlay {
@@ -35,27 +35,27 @@
 }
 
 .banner-slide .banner-background .banner-overlay .banner-content .banner-card {
-    border-left: 4px solid $mfm-amarelo;
+    border-left: 5px solid $mfm-amarelo;
     background-color: $white;
     border-radius: 8px;
     z-index: 1;
 }
 
 .card-title {
-    font-family: $font-nunito;
+    font-family: $font-primary;
     padding: 10px 10px;
     text-align: left;
     font-weight: 900;
-    font-size: 24px;
+    font-size: 36px;
     color: $mfm-roxo;
 }
 
 .card-body {
     padding: 10px;
-    font-family: $font-roboto;
-    font-size: 12px;
+    font-family: $font-secundary;
+    font-size: 14px;
     text-align: left;
-    color: $black;
+    color: $mfm-cinza;
 }
 
 .card-footer {
@@ -126,7 +126,7 @@
     .banner-slide .banner-background .banner-overlay .banner-content .banner-card {
         position: absolute;
         width: 45%;
-        max-width: 320px;
+        max-width: 420px;
         left: 10%;
         bottom: 20px;
     }
