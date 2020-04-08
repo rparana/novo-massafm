@@ -41,7 +41,7 @@
     z-index: 1;
 }
 
-.card-title {
+.banner-card .card-title {
     font-family: $font-primary;
     padding: 10px 10px;
     text-align: left;
@@ -50,7 +50,7 @@
     color: $mfm-roxo;
 }
 
-.card-body {
+.banner-card .card-body {
     padding: 10px;
     font-family: $font-secundary;
     font-size: 14px;
@@ -58,7 +58,7 @@
     color: $mfm-cinza;
 }
 
-.card-footer {
+.banner-card .card-footer {
     position: relative;
     float: right;
     padding: 10px;

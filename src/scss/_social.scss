@@ -1,5 +1,5 @@
 .icon-button {
-    background-color: white;
+    background-color: $white;
     border-radius: 50%;
     cursor: pointer;
     display: inline-block;
@@ -13,6 +13,27 @@
     -ms-user-select: none;
     user-select: none;
     width: 32px;
+}
+
+
+/* Rodapé */
+
+.rodape .icon-button {
+    font-size: 28px;
+    width: 42px;
+    height: 42px;
+}
+
+.rodape .icon-button:hover span {
+    width: 44px;
+    height: 44px;
+    margin: -51%;
+}
+
+.rodape .icon-button i {
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
 }
 
 
@@ -75,11 +96,8 @@
     z-index: 10;
 }
 
-.icon-button:hover .icon-twitter,
-.icon-button:hover .icon-facebook,
-.icon-button:hover .icon-youtube,
-.icon-button:hover .icon-whatsapp {
-    color: white;
+.icon-button:hover i {
+    color: $white !important;
 }
 
 @media (max-width: 767.9px) {}

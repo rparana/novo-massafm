@@ -11,6 +11,7 @@ var playerSection = qs('.section.player');
 var btnMinMaxPlayer = qs('.btn-min-max');
 var btnClosePlayer = qs('.operate-box .btn-close');
 var menu = qs('.menu-topo');
+var btnup = qs('.rodape .botao-up');
 
 btnMenu.addEventListener('click', (event) => {
     event.preventDefault();
@@ -23,14 +24,27 @@ btnClose.addEventListener('click', (event) => {
 })
 btnClosePlayer.addEventListener('click', (event) => {
     event.preventDefault();
-    playerSection.style = 'display: none;';
+    playerSection.classList.add('minimized');
+    playerSection.classList.toggle('hide');
+    btnClosePlayer.classList.toggle('mdi-dock-window');
+    btnClosePlayer.classList.toggle('mdi-close');
+    btnMinMaxPlayer.classList.remove('mdi-chevron-down');
+    btnMinMaxPlayer.classList.add('mdi-chevron-up');
 })
 
 btnMinMaxPlayer.addEventListener('click', (event) => {
     event.preventDefault();
+    playerSection.classList.remove('hide');
     playerSection.classList.toggle('minimized');
     btnMinMaxPlayer.classList.toggle('mdi-chevron-down');
     btnMinMaxPlayer.classList.toggle('mdi-chevron-up');
+    btnClosePlayer.classList.remove('mdi-dock-window');
+    btnClosePlayer.classList.add('mdi-close');
+})
+btnup.addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log("btnup")
+    window.scroll({ top: 0, behavior: 'smooth' });
 })
 
 
@@ -46,6 +60,9 @@ function docReady() {
         event.preventDefault();
         scroolGrid(listaPromocoes, 360, true);
     })
+    var d = new Date();
+    var diaSemana = d.getDay();
+    tabClick.call(qs(`#btn${diaSemana}`));
 }
 
 function scroolGrid(grid, tamanho, dir) {
@@ -54,9 +71,30 @@ function scroolGrid(grid, tamanho, dir) {
     } else {
         var pos = grid.scrollLeft - tamanho;
     }
-    console.log(pos);
+    //console.log(pos);
     grid.scroll({ left: pos, behavior: 'smooth' })
         //grid.scrollLeft = pos;
-    console.log(document.getElementById('container'))
-    console.log(grid);
+        //console.log(document.getElementById('container'))
+        //console.log(grid);
 }
+
+function resetTabs() {
+    Array.from(document.getElementsByClassName("tab")).forEach(function(element) {
+        element.classList.remove("active-tab");
+    });
+    Array.from(document.getElementsByClassName("tab-btn")).forEach(function(element) {
+        element.classList.remove("active-btn");
+    });
+
+}
+var tabClick = function() {
+    resetTabs();
+    var attribute = this.getAttribute("data-tab");
+    document.getElementById(attribute).classList.add("active-tab");
+    this.classList.add("active-btn");
+
+};
+
+Array.from(document.getElementsByClassName("tab-btn")).forEach(function(element) {
+    element.addEventListener('click', tabClick)
+});

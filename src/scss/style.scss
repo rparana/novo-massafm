@@ -5,6 +5,8 @@
 @import "_fonts";
 @import "reset";
 @import "gerais";
+@import "social";
+@import "forms";
 @import "carrossel";
 @import "pracas";
 @import "menu_topo";
@@ -12,9 +14,14 @@
 @import "promocoes";
 @import "noticias";
 @import "podcasts";
+@import "programacao";
+@import "pecamusica";
+@import "rodape";
 @import "player";
 //auxiliares
 @import "auxiliares";
 @import "background";
+//Animações
+@import "animations";
 //import Material Icon
 @import '../../node_modules/material/scss/materialdesignicons.scss';

@@ -14,6 +14,10 @@ $value in $theme-colors {
     background: $mfm-roxo linear-gradient(90deg, $mfm-roxo, $mfm-magenta) repeat-x !important;
 }
 
+.bg-gradient-amarelo-laranja {
+    background: transparent linear-gradient(90deg, $mfm-amarelo 0%, $mfm-laranja 100%) 0% 0% no-repeat padding-box !important;
+}
+
 .bg-white {
     background-color: $white !important;
 }

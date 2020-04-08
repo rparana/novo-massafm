@@ -1,0 +1,71 @@
+/* Rodapé
+***********/
+
+.section.rodape {
+    background: $mfm-cinza-escuro;
+    //min-height: 400px;
+    padding: 0px 0px 80px;
+}
+
+.section.rodape .content {
+    display: grid;
+    grid-template-areas: "btn-up" "social" "menu-rodape" "logo";
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: 90%;
+}
+
+.rodape .row-botao-up {
+    grid-area: btn-up;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.rodape .botao-up {
+    cursor: pointer;
+    color: $mfm-amarelo;
+    background: $mfm-cinza-escuro;
+    font-size: 54px;
+    margin-top: -30px;
+    border-radius: 50%;
+    padding: 0px 7px;
+}
+
+.rodape .social {
+    grid-area: social;
+    display: flex;
+    justify-content: center;
+}
+
+.rodape .social .icon-button {
+    margin: 5px;
+}
+
+.rodape .social .icon-button i {
+    color: $mfm-cinza-escuro;
+}
+
+.rodape .menu-rodape {
+    grid-area: menu-rodape;
+    margin: 20px;
+}
+
+.rodape .menu-rodape ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.rodape .menu-rodape ul li {
+    color: $white;
+    font-weight: normal;
+    font-size: 12px;
+    margin: 10px;
+}
+
+.rodape .row-logo {
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
+}

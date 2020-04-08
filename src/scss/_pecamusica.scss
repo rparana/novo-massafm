@@ -1,0 +1,70 @@
+/* Peça sua música
+*******************/
+
+.section.pecaSuaMusica {
+    background: url('../images/bg-gradiente.png') top left / cover no-repeat;
+    min-height: 500px;
+    display: grid;
+    grid-template-areas: "card";
+    grid-template-columns: 100%;
+    justify-content: center;
+    align-content: center;
+    padding: 50px 0px 80px;
+}
+
+.section.pecaSuaMusica .content {
+    display: flex;
+    justify-content: center;
+}
+
+.card-pecaSuaMusica {
+    grid-area: card;
+    display: grid;
+    justify-content: center;
+    grid-template-areas: "title" "form";
+    max-width: 860px;
+    border-left: 10px solid $mfm-amarelo;
+    background-color: $white;
+    border-radius: 5px;
+}
+
+.card-pecaSuaMusica .card-title {
+    grid-area: title;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+}
+
+.card-pecaSuaMusica .card-title h3 {
+    color: $mfm-roxo;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: 900;
+}
+
+.card-pecaSuaMusica .card-title p {
+    color: $mfm-cinza;
+    font-family: $font-open-sans;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.card-pecaSuaMusica .card-body {
+    grid-area: form;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pecaSuaMusica .bnt-enviar {
+    cursor: pointer;
+    border: none;
+    color: $mfm-amarelo;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 5px;
+    padding: 10px 40px;
+    width: inherit;
+    margin: 0px auto;
+}

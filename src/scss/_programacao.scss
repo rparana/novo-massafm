@@ -1,0 +1,200 @@
+/* Programação
+***************/
+
+.section.programacao {
+    padding: 20px 0;
+    background: url('../images/BACKGROUND-programacao.png') top left/ contain no-repeat;
+    //min-height: 600px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.section.programacao .content {
+    padding: 20px 0;
+}
+
+.programacao .logo-section {
+    display: grid;
+    justify-content: center;
+    grid-template-areas: "logo" "titulo";
+    //grid-template-columns: auto;
+    grid-template-rows: 30px auto;
+}
+
+.programacao .logo-section .header-img {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    grid-area: logo;
+    grid-row-start: logo;
+    grid-row-end: titulo;
+}
+
+.programacao .logo-section img {
+    margin-top: -100px;
+}
+
+.programacao .logo-section .header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    grid-area: titulo;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    width: 100%;
+    max-width: 520px;
+}
+
+.programacao .logo-section .header h1 {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.programacao .logo-section .header p {
+    font-family: $font-open-sans;
+    color: $mfm-cinza;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
+
+
+/* Tab Programação
+*******************/
+
+.tab-programacao {
+    display: grid;
+    grid-template-areas: "tabs" "tabs-content";
+    grid-template-rows: minmax(50px, 80px) auto;
+    grid-template-columns: 100%;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.tab-programacao .btns-box {
+    grid-area: tabs;
+    width: 100%;
+}
+
+.tab-programacao .btns-box .tab-buttons {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+    padding: 0px 5px;
+}
+
+.tab-programacao .btns-box .tab-buttons::-webkit-scrollbar {
+    height: 0;
+    background: $white;
+}
+
+.tab-programacao .btns-box .tab-buttons .tab-btn {
+    cursor: pointer;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $mfm-cinza;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-content: center;
+    padding: 10px;
+    background-image: linear-gradient(to left, transparent, transparent 50%, $mfm-laranja 52%, $mfm-amarelo);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: all .25s ease-in;
+    margin: 5px 0;
+}
+
+.tab-programacao .btns-box .tab-buttons .tab-btn.active-btn {
+    background-image: linear-gradient(to left, transparent, transparent 50%, $mfm-laranja 50%, $mfm-amarelo);
+    background-position: 0 0;
+    animation-name: tab-slide-in;
+    animation-duration: .5s;
+}
+
+.tab-programacao .btns-box .tab-buttons .tab-btn:hover {
+    background-position: 0 -100%;
+}
+
+.tab-programacao .btns-box .tab-buttons .tab-btn:not(:last-of-type) {
+    border-right: 1px solid $mfm-cinza;
+}
+
+.tab-programacao .tabs-content {
+    grid-area: tabs-content;
+}
+
+.tab-programacao .tabs-content {
+    max-width: 100%;
+    max-height: 650px;
+    overflow-y: scroll;
+    scrollbar-color: $mfm-amarelo $mfm-roxo !important;
+    scrollbar-width: thin !important;
+}
+
+.tab-programacao .tabs-content::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.tab-programacao .tabs-content::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: $mfm-amarelo;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.tab-programacao .tabs-content::-webkit-scrollbar {
+    height: 0;
+    background: $white;
+}
+
+.tab-programacao .tabs-content .tab {
+    display: none;
+}
+
+.tab-programacao .tabs-content .tab.active-tab {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-programa {
+    display: flex;
+    flex-wrap: no-wrap;
+    margin: 0px 10px 10px 0px;
+    //border: 1px solid $mfm-cinza;
+    height: 200px;
+}
+
+.card-programa .cover-img {
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.card-programa .card-info {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    max-width: 160px;
+}
+
+.card-programa .card-info h3 {
+    color: $mfm-roxo;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.card-programa .card-info h5,
+.card-programa .card-info p {
+    color: $mfm-cinza;
+    font-family: $font-open-sans;
+    font-size: 12px;
+    font-weight: normal;
+}

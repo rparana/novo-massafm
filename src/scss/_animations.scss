@@ -1,0 +1,12 @@
+/* Animações 
+**************/
+
+@keyframes tab-slide-in {
+    from {
+        background-position: 100% 0;
+    }
+    to {
+        background-image: linear-gradient(to left, transparent, transparent 50%, $mfm-laranja 50%, $mfm-amarelo);
+        background-position: 0 0;
+    }
+}
