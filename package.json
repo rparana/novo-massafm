@@ -11,7 +11,8 @@
     "dependencies": {
         "gulp": "^4.0.2",
         "gulp-sass": "^4.0.2",
-        "sass": "^1.26.3"
+        "sass": "^1.26.3",
+        "turbolinks": "^5.2.0"
     },
     "devDependencies": {
         "babel-core": "^6.26.3",

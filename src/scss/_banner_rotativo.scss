@@ -108,7 +108,7 @@
 @media (max-width: 767.9px) {
     .banner-slide .banner-background .banner-overlay .banner-content .banner-card {
         position: absolute;
-        width: 65%;
+        width: 75%;
         max-height: 250px;
         min-width: 200px;
         left: 10%;
@@ -116,12 +116,11 @@
     }
 }
 
-@media (min-width: 600px) {
-    .banner-slide .banner-background .banner-overlay .banner-content .banner-card {
-        width: 45%;
-    }
-}
-
+// @media (min-width: 600px) {
+//     .banner-slide .banner-background .banner-overlay .banner-content .banner-card {
+//         width: 45%;
+//     }
+// }
 @media (min-width: 768px) {
     .banner-slide .banner-background .banner-overlay .banner-content .banner-card {
         position: absolute;

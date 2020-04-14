@@ -1,4 +1,6 @@
 import player from "./player.js";
+import podcasts from "./podcasts.js";
+window.addEventListener("load", player.start());
 
 function qs(s) { return document.querySelector(s) }
 
@@ -48,10 +50,18 @@ btnup.addEventListener('click', (event) => {
 })
 
 
+const playPodcast = (b) => {
+    player.reload(b);
+}
+
+const pausePodcast = (b) => {
+    player.pause();
+}
+
 document.addEventListener('DOMContentLoaded', docReady);
 
 function docReady() {
-    console.log("pronto")
+
     scrollPromoEsq.addEventListener('click', (event) => {
         event.preventDefault();
         scroolGrid(listaPromocoes, 360, false);
@@ -63,7 +73,37 @@ function docReady() {
     var d = new Date();
     var diaSemana = d.getDay();
     tabClick.call(qs(`#btn${diaSemana}`));
+    podcasts.updatePodcasts.call(this);
+    console.log("pronto")
 }
+
+document.querySelectorAll(".podcast-item-player .controls .btn-play").forEach(function(element) {
+    const url = element.querySelector('.track').getAttribute("url");
+    const title = element.querySelector('.track').getAttribute("title");
+    const btnPod = element;
+    element.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log(btnPod)
+        document.querySelector('#title').setAttribute("value", title);
+        document.querySelector('#url').setAttribute("value", url);
+        document.querySelector('#img').setAttribute("value", "images/logo_podcasts.png");
+        document.querySelector('#live').setAttribute("value", "false");
+        if (btnPod.classList.contains("first")) {
+            resetPodcasts();
+            btnPod.classList.remove('first')
+            playPodcast(btnPod);
+        }
+    })
+});
+
+const resetPodcasts = () => {
+    document.querySelectorAll(".podcast-item-player .controls .btn-play").forEach(function(element) {
+        element.classList.add('first');
+        element.classList.add('play');
+        element.classList.remove('pause');
+    })
+}
+
 
 function scroolGrid(grid, tamanho, dir) {
     if (dir) {
@@ -98,3 +138,22 @@ var tabClick = function() {
 Array.from(document.getElementsByClassName("tab-btn")).forEach(function(element) {
     element.addEventListener('click', tabClick)
 });
+
+//Modal Selecione a Praça
+qs(".praca .select").addEventListener('click', () => { qs(".modal-pracas").classList.add('show') })
+window.onclick = function(event) {
+    //console.log(event.target);
+    if (event.target == qs(".modal-pracas") || event.target == qs(".modal-pracas .mdi-close")) {
+        qs(".modal-pracas").classList.remove('show');
+    }
+};
+qs("#filter").addEventListener('keyup', (e) => {
+    var val = e.target.value.toUpperCase();
+    console.log(val)
+    var list = document.querySelectorAll(".list-group .list-group-item");
+
+    list.forEach(function(element) {
+        element.getAttribute("title").toUpperCase().indexOf(val) > -1 ?
+            element.classList.remove('hide') : element.classList.add('hide')
+    });
+})

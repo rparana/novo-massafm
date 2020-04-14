@@ -186,7 +186,10 @@ header {
 }
 
 .border-gradient {
-    padding: 3px;
+    background: $mfm-roxo linear-gradient(90deg, $mfm-roxo, $mfm-magenta) repeat-x !important;
+    padding: 2px;
+    border-radius: 50%;
+    display: flex;
 }
 
 .circle {

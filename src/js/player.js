@@ -1,14 +1,9 @@
-//import audios from "./data.js";
+import audios from "./data.js";
 import { path, secondsToMinutes } from "./utils.js";
 import elements from "./playerElements.js";
 
 export default {
-    audioData: [{
-        title: "Como começei a programar / Por que criamos a Rocketseat / Nossa Stack",
-        artist: "Diego Fernandes",
-        cover: "como-comecei.jpg",
-        file: "como-comecei.mp3"
-    }],
+    audioData: [],
     currentAudio: {},
     currentPlaying: 0,
     isPlaying: false,
@@ -16,17 +11,46 @@ export default {
         elements.get.call(this);
         this.update();
     },
-
+    reload(b) {
+        console.log(b)
+        this.audio.pause();
+        if (typeof(b) == "object") {
+            if (this.playPausePodCast != null) this.playPausePodCast.onclick = null;
+            this.playPausePodCast = b;
+        }
+        this.update();
+        this.play();
+    },
     play() {
+        // check if context is in suspended state (autoplay policy)
         this.isPlaying = true;
+        // if (this.audioCtx.state === 'suspended') {
+        //     this.audioCtx.resume().then(() => {
+        //         //this.audio.play();
+        //         console.log('Playback resumed successfully');
+        //     });
+        //     //console.log("audio resume.")
+        // } else {
+        //     this.audio.play();
+        // }
         this.audio.play();
-        this.playPause.innerText = "pause";
+        if (this.playPausePodCast !== null) {
+            this.playPausePodCast.classList.remove('play')
+            this.playPausePodCast.classList.add('pause')
+        }
+        this.playPause.classList.remove('mdi-play-circle-outline')
+        this.playPause.classList.add('mdi-pause-circle-outline')
     },
 
     pause() {
         this.isPlaying = false;
         this.audio.pause();
-        this.playPause.innerText = "play_arrow";
+        if (this.playPausePodCast !== null) {
+            this.playPausePodCast.classList.remove('pause')
+            this.playPausePodCast.classList.add('play')
+        }
+        this.playPause.classList.remove('mdi-pause-circle-outline')
+        this.playPause.classList.add('mdi-play-circle-outline')
     },
 
     togglePlayPause() {
@@ -39,7 +63,13 @@ export default {
 
     toggleMute() {
         this.audio.muted = !this.audio.muted;
-        this.mute.innerText = this.audio.muted ? "volume_down" : "volume_up";
+        if (this.audio.muted) {
+            this.mute.classList.remove('mdi-volume-high')
+            this.mute.classList.add('mdi-volume-off')
+        } else {
+            this.mute.classList.remove('mdi-volume-off')
+            this.mute.classList.add('mdi-volume-high')
+        }
     },
 
     next() {
@@ -51,6 +81,7 @@ export default {
 
     setVolume(value) {
         this.audio.volume = value / 100;
+        this.gainNode.gain.value = value;
     },
 
     setSeek(value) {
@@ -59,21 +90,28 @@ export default {
 
     timeUpdate() {
         this.currentDuration.innerText = secondsToMinutes(this.audio.currentTime);
-        this.seekbar.value = this.audio.currentTime;
+        if (this.currentAudio.live) {
+            this.seekbar.value = 100;
+            this.seekbar.disabled = true;
+        }
     },
 
     update() {
-        this.currentAudio = this.audioData[this.currentPlaying];
-        this.cover.style.background = `url('${path(
-            this.currentAudio.cover
-        )}') no-repeat center center / cover`;
+        this.currentAudio = audios.track();
+        this.cover.src = this.currentAudio.cover;
         this.title.innerText = this.currentAudio.title;
         this.artist.innerText = this.currentAudio.artist;
-        elements.createAudioElement.call(this, path(this.currentAudio.file));
-
+        elements.createAudioElement.call(this, this.currentAudio.file);
+        //this.track = this.audioCtx.createMediaElementSource(this.audio);
+        // connect our graph
+        //this.track.connect(this.gainNode).connect(this.audioCtx.destination);
         this.audio.onloadeddata = () => {
             elements.actions.call(this);
         };
+        if (this.currentAudio.autoplay === 'true') {
+            //console.log(this.currentAudio.autoplay)
+            this.play();
+        }
     },
 
     restart() {

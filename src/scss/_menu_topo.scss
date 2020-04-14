@@ -116,4 +116,19 @@
     .section-menu-topo .menu-topo li {
         padding: 0 5px;
     }
+    .section-menu-topo .menu-topo nav .menu-active {
+        position: relative;
+    }
+    .section-menu-topo .menu-topo nav .menu-active::after {
+        content: "";
+        position: absolute;
+        bottom: -50%;
+        left: 50%;
+        transform: rotate(0deg);
+        margin-left: -5px;
+        border-width: 3px;
+        border-style: solid;
+        border-color: $mfm-roxo;
+        border-radius: 50%;
+    }
 }

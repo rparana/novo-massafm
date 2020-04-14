@@ -95,7 +95,8 @@
     padding: 20px;
 }
 
-.player-box .player-info p {
+.player-box .player-info p,
+.player-box .player-info h5 {
     font-size: 14px;
     color: $white;
     font-weight: 200;
@@ -242,4 +243,50 @@
 
 .section.player.minimized .player-box .player-anuncio {
     display: none;
+}
+
+.equalize {
+    display: flex;
+    padding: 5px 5px;
+    border-radius: 50%;
+    background: $white;
+}
+
+.everlib-logo-first-bar,
+.everlib-logo-second-bar,
+.everlib-logo-third-bar,
+.everlib-logo-fourth-bar {
+    display: inline-block;
+    border-radius: 13px;
+    width: 2px;
+    margin-right: 2px;
+    transition: .5s;
+    animation: equalize 4s 0s infinite;
+    animation-timing-function: linear;
+    align-self: flex-end;
+}
+
+.everlib-logo-first-bar {
+    height: 100%;
+    background: $mfm-roxo linear-gradient(180deg, $mfm-roxo, $mfm-magenta) repeat-x !important;
+    transition: 0.5s;
+    animation-delay: -1.9s;
+}
+
+.everlib-logo-second-bar {
+    height: 100%;
+    background: $mfm-roxo linear-gradient(0deg, $mfm-roxo, $mfm-magenta) repeat-x !important;
+    animation-delay: -2.9s;
+}
+
+.everlib-logo-third-bar {
+    height: 100%;
+    background: $mfm-roxo linear-gradient(180deg, $mfm-roxo, $mfm-magenta) repeat-x !important;
+    animation-delay: -3.9s;
+}
+
+.everlib-logo-fourth-bar {
+    height: 100%;
+    background: $mfm-roxo linear-gradient(180deg, $mfm-roxo, $mfm-magenta) repeat-x !important;
+    animation-delay: -4.9s;
 }

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Massa FM</title>
     <link rel="stylesheet" href="css/style.css">
+    <link type="image/x-icon" href="images/favicon.png" rel="shortcut icon">
+    <script src="js/turbolinks.js" data-turbolinks-track="reload"></script>
+    <meta name="turbolinks-cache-control" content="no-cache">
 </head>
 
 <body>
@@ -14,10 +17,87 @@
     <header class="topo-praca">
         <div class="content flex-right">
             <div class="praca">
-                VOCÊ ESTÁ EM
-                <a href="#">
-                    CURITIBA | MASSA FM 97.7 <span class="mdi mdi-menu-down"></span>
-                </a>
+                <h3>VOCÊ ESTÁ EM</h3>
+                <div class="select">
+                    <h3>CURITIBA | MASSA FM 97.7 <span class="mdi mdi-menu-down"></span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="modal-pracas">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <h3 class="modalPracaTitle" id="modalPracaTitle">Escolha sua rádio</h3>
+                    <div class="btn-close" data-dismiss="modal" aria-label="Close">
+                        <span class="mdi mdi-close"></span></div>
+                    <div class="form-group mt-4">
+                        <input type="text" class="form-control" id="filter" placeholder="Pesquise..">
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div id="list_pracas" class="list-group listaOption">
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=1077&amp;front=front" title="107.7 - 107.7">
+                            <span class="cidade">107.7</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2017/09/seg.png" alt="107.7 - 107.7">
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=assis&amp;front=front" title="91.5 - 91.5">
+                            <span class="cidade">91.5</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2018/05/1526061573_MassafmAssis118x42.png" alt="91.5 - 91.5">
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=alta-paulista&amp;front=front" title="Alta Paulista - 89.7">
+                            <span class="cidade">Alta Paulista</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2017/02/logo_praca_altapaulista.png" alt="Alta Paulista - 89.7">
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=massa-fm-blumenau&amp;front=front" title="Blumenau - 103.5">
+                            <span class="cidade">Blumenau</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2017/08/blume.png" alt="Blumenau - 103.5">
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=cacoal&amp;front=front" title="Cacoal - 90.3">
+                            <span class="cidade">Cacoal</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2019/05/logo-paginainicial1.png" alt="Cacoal - 90.3">
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=canoinhas&amp;front=front" title="Canoinhas - 105.1">
+                            <span class="cidade">Canoinhas</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2017/10/20.png" alt="Canoinhas - 105.1">
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=cascavel&amp;front=front" title="Cascavel - 98.9">
+                            <span class="cidade">Cascavel</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2019/08/logo-paginainicial-2.png" alt="Cascavel - 98.9">
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=castanheira&amp;front=front" title="Castanheira - 98.7">
+                            <span class="cidade">Castanheira</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2020/01/Logo_PaginaInicial_site_FM_Castanheira_v1.png" alt="Castanheira - 98.7">
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=ceuazul&amp;front=front" title="Céu Azul - 97.9">
+                            <span class="cidade">Céu Azul</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2018/10/logo-paginainicial.png" alt="Céu Azul - 97.9">
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=chapeco&amp;front=front" title="Chapecó - 107.1">
+                            <span class="cidade">Chapecó</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2019/05/logo-paginainicial2.png" alt="Chapecó - 107.1">
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=cianorte&amp;front=front" title="Cianorte - 96.9">
+                            <span class="cidade">Cianorte</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2019/11/logo-paginainicial-31.png" alt="Cianorte - 96.9">
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=colorado&amp;front=front" title="Colorado - 94.1">
+                            <span class="cidade">Colorado</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2019/01/logo-paginainicial1.png" alt="Colorado - 94.1">
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=criciuma&amp;front=front" title="Criciúma - 94.5">
+                            <span class="cidade">Criciúma</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2019/10/logo-paginainicial.png" alt="Criciúma - 94.5">
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=curitiba&amp;front=front" title="Curitiba - 97.7">
+                            <span class="cidade">Curitiba</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2017/02/logo_curitiba.png" alt="Curitiba - 97.7">
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="https://massafm.com.br?cd=florianopolis&amp;front=front" title="Florianópolis - 97,7">
+                            <span class="cidade">Florianópolis</span>
+                            <img src="http://massafm.com.br/wp-content/uploads/2017/12/8555.png" alt="Florianópolis - 97,7">
+                        </a>
+
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -36,7 +116,7 @@
                     <nav>
                         <ul>
                             <li>
-                                <a href="#"><span class="mdi mdi-home icon"></span>
+                                <a href="index.html" class="menu-active"><span class="mdi mdi-home icon"></span>
                                 Home
                             </a>
                             </li>
@@ -196,7 +276,7 @@
             <div class="featured-posts">
                 <div class="grid-noticias">
                     <div class="grid-50 tablet-grid-50 mobile-grid-100">
-                        <a href="#" class="post-item featured box-shadow" style="background-image:url('images/noticias-img01.jpg');">
+                        <a href="artigo.html" class="post-item featured box-shadow" style="background-image:url('images/noticias-img01.jpg');">
                             <div class="box-badge">
                                 Notícias
                             </div>
@@ -211,7 +291,7 @@
                     </div>
                     <div class="no-pad tablet-grid-50 grid-50 mobile-grid-100">
                         <div class="grid-50 tablet-grid-50 mobile-grid-100">
-                            <a href="#" class="post-item box-shadow" style="background-image:url('images/noticias-img02.jpg');">
+                            <a href="artigo.html" class="post-item box-shadow" style="background-image:url('images/noticias-img02.jpg');">
                                 <div class="box-badge">
                                     Notícias
                                 </div>
@@ -225,7 +305,7 @@
                             </a>
                         </div>
                         <div class="grid-50 tablet-grid-50 mobile-grid-100">
-                            <a href="#" class="post-item box-shadow" style="background-image:url('images/noticias-img03.jpg');">
+                            <a href="artigo.html" class="post-item box-shadow" style="background-image:url('images/noticias-img03.jpg');">
                                 <div class="box-badge">
                                     Eventos
                                 </div>
@@ -239,7 +319,7 @@
                             </a>
                         </div>
                         <div class="grid-50 tablet-grid-50 mobile-grid-100">
-                            <a href="#" class="post-item box-shadow" style="background-image:url('images/noticias-img04.jpg');">
+                            <a href="artigo.html" class="post-item box-shadow" style="background-image:url('images/noticias-img04.jpg');">
                                 <div class="box-badge">
                                     Vídeos
                                 </div>
@@ -253,7 +333,7 @@
                             </a>
                         </div>
                         <div class="grid-50 tablet-grid-50 mobile-grid-100">
-                            <a href="#" class="post-item box-shadow" style="background-image:url('images/noticias-img05.jpg');">
+                            <a href="artigo.html" class="post-item box-shadow" style="background-image:url('images/noticias-img05.jpg');">
                                 <div class="box-badge">
                                     Eventos
                                 </div>
@@ -269,7 +349,7 @@
                     </div>
                 </div>
             </div>
-
+            <div class="row-footer"><a href="#" class="bnt-enviar bg-gradient-roxo-magenta"> Carregar Mais</a></div>
         </div>
     </section>
     <!-- Fim Noticias -->
@@ -329,11 +409,20 @@
                             <li>
                                 <div class="podcast-item-player">
                                     <div class="controls">
-                                        <a href="#" class="btn-play" id="play-5">
-                                            <div class="track" url="podcasts/audio1.mp3"></div>
+                                        <div class="btn-play play first" id="play-5">
+                                            <div class="track" url="podcasts/audio1.mp3" title="Tema do Podcast Ep. 05"></div>
+                                            <div class="border-gradient">
+                                                <div class="equalize">
+                                                    <i class="everlib-logo-first-bar"></i>
+                                                    <i class="everlib-logo-second-bar"></i>
+                                                    <i class="everlib-logo-third-bar"></i>
+                                                </div>
+                                            </div>
                                             <h3><i class="mdi mdi-play-circle-outline"></i></h3>
-                                        </a>
-                                        <span class="total-duration">14 min</span>
+                                        </div>
+                                        <span class="total-duration">
+                                            <img src="images/massafm_site_loader.gif" alt="">
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="podcast-item-detail">
@@ -349,11 +438,20 @@
                             <li>
                                 <div class="podcast-item-player">
                                     <div class="controls">
-                                        <a href="#" class="btn-play" id="play-4">
-                                            <div class="track" url="podcasts/audio1.mp3"></div>
+                                        <a href="#" class="btn-play play first" id="play-4">
+                                            <div class="track" url="podcasts/audio2.mp3" title="Tema do Podcast Ep. 04"></div>
+                                            <div class="border-gradient">
+                                                <div class="equalize">
+                                                    <i class="everlib-logo-first-bar"></i>
+                                                    <i class="everlib-logo-second-bar"></i>
+                                                    <i class="everlib-logo-third-bar"></i>
+                                                </div>
+                                            </div>
                                             <h3><i class="mdi mdi-play-circle-outline"></i></h3>
                                         </a>
-                                        <span class="total-duration">12 min</span>
+                                        <span class="total-duration">
+                                            <img src="images/massafm_site_loader.gif" alt="">
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="podcast-item-detail">
@@ -370,11 +468,20 @@
                             <li>
                                 <div class="podcast-item-player">
                                     <div class="controls">
-                                        <a href="#" class="btn-play" id="play-3">
-                                            <div class="track" url="podcasts/audio1.mp3"></div>
+                                        <a href="#" class="btn-play play first" id="play-3">
+                                            <div class="track" url="podcasts/audio3.mp3" title="Tema do Podcast Ep. 03"></div>
+                                            <div class="border-gradient">
+                                                <div class="equalize">
+                                                    <i class="everlib-logo-first-bar"></i>
+                                                    <i class="everlib-logo-second-bar"></i>
+                                                    <i class="everlib-logo-third-bar"></i>
+                                                </div>
+                                            </div>
                                             <h3><i class="mdi mdi-play-circle-outline"></i></h3>
                                         </a>
-                                        <span class="total-duration">11 min</span>
+                                        <span class="total-duration">
+                                            <img src="images/massafm_site_loader.gif" alt="">
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="podcast-item-detail">
@@ -391,11 +498,20 @@
                             <li>
                                 <div class="podcast-item-player">
                                     <div class="controls">
-                                        <a href="#" class="btn-play" id="play-2">
-                                            <div class="track" url="podcasts/audio1.mp3"></div>
+                                        <a href="#" class="btn-play play first" id="play-2">
+                                            <div class="track" url="podcasts/audio4.mp3" title="Tema do Podcast Ep. 02"></div>
+                                            <div class="border-gradient">
+                                                <div class="equalize">
+                                                    <i class="everlib-logo-first-bar"></i>
+                                                    <i class="everlib-logo-second-bar"></i>
+                                                    <i class="everlib-logo-third-bar"></i>
+                                                </div>
+                                            </div>
                                             <h3><i class="mdi mdi-play-circle-outline"></i></h3>
                                         </a>
-                                        <span class="total-duration">10 min</span>
+                                        <span class="total-duration">
+                                            <img src="images/massafm_site_loader.gif" alt="">
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="podcast-item-detail">
@@ -412,11 +528,20 @@
                             <li>
                                 <div class="podcast-item-player">
                                     <div class="controls">
-                                        <a href="#" class="btn-play" id="play-1">
-                                            <div class="track" url="podcasts/audio1.mp3"></div>
+                                        <a href="#" class="btn-play play first" id="play-1">
+                                            <div class="track" url="podcasts/audio5.mp3" title="Tema do Podcast Ep. 01"></div>
+                                            <div class="border-gradient">
+                                                <div class="equalize">
+                                                    <i class="everlib-logo-first-bar"></i>
+                                                    <i class="everlib-logo-second-bar"></i>
+                                                    <i class="everlib-logo-third-bar"></i>
+                                                </div>
+                                            </div>
                                             <h3><i class="mdi mdi-play-circle-outline"></i></h3>
                                         </a>
-                                        <span class="total-duration">8 min</span>
+                                        <span class="total-duration">
+                                            <img src="images/massafm_site_loader.gif" alt="">
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="podcast-item-detail">
@@ -1151,38 +1276,39 @@
 
 
     <!-- Inicio Player -->
-    <section class="section flyer-player">
+    <section class="section flyer-player" data-turbolinks-permanent>
         <div class="operate-box">
             <span class="mdi mdi-chevron-down btn-min-max"></span>
             <span class="mdi mdi-close btn-close"></span>
         </div>
-        <div class="section player hide">
+        <div class="section player">
             <div class="content">
                 <!-- <div class="titulo-img">
                     <img src="images/logo-bg-player.png" alt="">
                 </div> -->
                 <div class="player-box">
                     <div class="box-logo-play">
-                        <img src="./images/logo_podcasts.png" alt="">
-                        <span class="mdi mdi-play-circle-outline"></span>
+                        <img id="img-cover" src="./images/logo_podcasts.png" alt="">
+                        <span class="mdi mdi-play-circle-outline" id="play-pause"></span>
                     </div>
                     <div class="player-title-control">
                         <div class="player-info">
                             <p>você está ouvindo:</p>
                             <h3>Massa FM 97.7 - ao vivo</h3>
+                            <h5></h5>
                         </div>
                         <div class="player-info-control">
                             <div class="progresso">
                                 <div class="seekbar">
                                     <input type="range" name="seekbar" id="seekbar" value="0" />
                                 </div>
-                                <div class="current-duration">00:00</div>
-                                <div class="total-duration">00:00</div>
+                                <div class="current-duration" id="current-duration">00:00</div>
+                                <div class="total-duration" id="total-duration">00:00</div>
                             </div>
                             <div class="volume-control">
-                                <span class="mdi mdi-volume-high"></span>
+                                <span class="mdi mdi-volume-high" id="mute"></span>
                                 <div class="volume-range">
-                                    <input type="range" name="volume" id="volume" min="0" max="100" value="100">
+                                    <input type="range" name="vol-control" id="vol-control" min="0" max="100" value="100">
                                 </div>
                             </div>
                         </div>
@@ -1194,17 +1320,18 @@
             </div>
             <div id="audioData" style="display: none;">
                 <div id="title" value="Massa FM 97.7 - ao vivo"></div>
-                <div id="img" value="src/images/logo_player.png"></div>
-                <div id="url" value="src/podcasts/audio1.mp3"></div>
+                <div id="artist" value=""></div>
+                <div id="img" value="images/logo_player.png"></div>
+                <div id="url" value="https://stm01.virtualcast.com.br:8118/live"></div>
                 <div id="live" value="true"></div>
-                <div id="autoplay" value="true"></div>
+                <div id="autoplay" value="false"></div>
             </div>
         </div>
     </section>
     <!-- Fim Player -->
 
 
-    <script src="js/scripts.js" type="module"></script>
+    <script src="js/scripts.js" data-turbolinks-eval="false" type="module"></script>
 </body>
 
 </html>
