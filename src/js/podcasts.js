@@ -1,4 +1,4 @@
-export default {
+window.podcasts = {
     updatePodcasts() {
         const base = this.reloadPlayer;
         document.querySelectorAll(".podcast-item-player .controls").forEach(function(element) {
@@ -21,4 +21,4 @@ export default {
         });
         return;
     }
-}
+};

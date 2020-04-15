@@ -7,12 +7,13 @@ export default {
     currentAudio: {},
     currentPlaying: 0,
     isPlaying: false,
+    minimized: true,
+    isClosed: true,
     start() {
         elements.get.call(this);
         this.update();
     },
     reload(b) {
-        console.log(b)
         this.audio.pause();
         if (typeof(b) == "object") {
             if (this.playPausePodCast != null) this.playPausePodCast.onclick = null;
@@ -20,16 +21,16 @@ export default {
         }
         this.update();
         this.play();
+
     },
     play() {
+        this.isClosed ? this.maxPlayer() : '';
         // check if context is in suspended state (autoplay policy)
         this.isPlaying = true;
         // if (this.audioCtx.state === 'suspended') {
         //     this.audioCtx.resume().then(() => {
         //         //this.audio.play();
-        //         console.log('Playback resumed successfully');
         //     });
-        //     //console.log("audio resume.")
         // } else {
         //     this.audio.play();
         // }
@@ -93,9 +94,16 @@ export default {
         if (this.currentAudio.live) {
             this.seekbar.value = 100;
             this.seekbar.disabled = true;
+        } else {
+            this.seekbar.value = this.audio.currentTime;
+            this.seekbar.disabled = false;
         }
+        this.updateBgSeekbar()
     },
-
+    updateBgSeekbar() {
+        var perc = this.seekbar.value / this.seekbar.max * 100
+        this.seekbar.style = `background: linear-gradient(to right, #6318af 0%, #b50091 ${perc}%, #606060 ${perc}%, #606060 100%);`
+    },
     update() {
         this.currentAudio = audios.track();
         this.cover.src = this.currentAudio.cover;
@@ -109,7 +117,6 @@ export default {
             elements.actions.call(this);
         };
         if (this.currentAudio.autoplay === 'true') {
-            //console.log(this.currentAudio.autoplay)
             this.play();
         }
     },
@@ -117,5 +124,47 @@ export default {
     restart() {
         this.currentPlaying = 0;
         this.update();
+    },
+    maxPlayer() {
+        this.minimized = false;
+        this.isClosed = false;
+        this.playerSection.classList.remove('hide');
+        this.playerSection.classList.remove('minimized');
+        this.btnMinMaxPlayer.classList.remove('mdi-chevron-up');
+        this.btnMinMaxPlayer.classList.add('mdi-chevron-down');
+        this.btnClosePlayer.classList.remove('mdi-dock-window');
+        this.btnClosePlayer.classList.add('mdi-close');
+    },
+    minPlayer() {
+        this.minimized = true;
+        this.playerSection.classList.add('minimized');
+        this.btnMinMaxPlayer.classList.remove('mdi-chevron-down');
+        this.btnMinMaxPlayer.classList.add('mdi-chevron-up');
+        this.btnClosePlayer.classList.remove('mdi-close');
+        this.btnClosePlayer.classList.add('mdi-dock-window');
+    },
+    togglePlayerSize() {
+        this.minimized ? this.maxPlayer() : this.minPlayer();
+    },
+    close() {
+        this.pause();
+        this.minimized = true;
+        this.isClosed = !this.isClosed;
+        this.playerSection.classList.add('minimized');
+        this.playerSection.classList.toggle('hide');
+        this.btnClosePlayer.classList.toggle('mdi-dock-window');
+        this.btnClosePlayer.classList.toggle('mdi-close');
+        this.btnMinMaxPlayer.classList.remove('mdi-chevron-down');
+        this.btnMinMaxPlayer.classList.add('mdi-chevron-up');
+    },
+    loadPlayer() {
+        elements.get.call(this);
+        elements.actions.call(this);
+        if (this.isPlaying) {
+            this.minimized = !this.minimized;
+            this.togglePlayerSize();
+            this.playPause.classList.remove('mdi-play-circle-outline')
+            this.playPause.classList.add('mdi-pause-circle-outline')
+        }
     }
 };

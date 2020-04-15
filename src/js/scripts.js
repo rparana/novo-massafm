@@ -1,6 +1,12 @@
-import player from "./player.js";
-import podcasts from "./podcasts.js";
+import player from "./player.js"
 window.addEventListener("load", player.start());
+document.addEventListener("turbolinks:load", function() {
+    console.log('turbo.load')
+    console.log(player)
+    player.loadPlayer();
+    podcasts.updatePodcasts.call(this);
+
+})
 
 function qs(s) { return document.querySelector(s) }
 
@@ -9,9 +15,6 @@ var scrollPromoDir = qs('a.scroll-promo.dir');
 var listaPromocoes = qs('.promocoes .carrossel-items');
 var btnMenu = qs('.nav-toggle');
 var btnClose = qs('.close');
-var playerSection = qs('.section.player');
-var btnMinMaxPlayer = qs('.btn-min-max');
-var btnClosePlayer = qs('.operate-box .btn-close');
 var menu = qs('.menu-topo');
 var btnup = qs('.rodape .botao-up');
 
@@ -24,25 +27,7 @@ btnClose.addEventListener('click', (event) => {
     event.preventDefault();
     menu.classList.toggle('active');
 })
-btnClosePlayer.addEventListener('click', (event) => {
-    event.preventDefault();
-    playerSection.classList.add('minimized');
-    playerSection.classList.toggle('hide');
-    btnClosePlayer.classList.toggle('mdi-dock-window');
-    btnClosePlayer.classList.toggle('mdi-close');
-    btnMinMaxPlayer.classList.remove('mdi-chevron-down');
-    btnMinMaxPlayer.classList.add('mdi-chevron-up');
-})
 
-btnMinMaxPlayer.addEventListener('click', (event) => {
-    event.preventDefault();
-    playerSection.classList.remove('hide');
-    playerSection.classList.toggle('minimized');
-    btnMinMaxPlayer.classList.toggle('mdi-chevron-down');
-    btnMinMaxPlayer.classList.toggle('mdi-chevron-up');
-    btnClosePlayer.classList.remove('mdi-dock-window');
-    btnClosePlayer.classList.add('mdi-close');
-})
 btnup.addEventListener('click', (event) => {
     event.preventDefault();
     console.log("btnup")
@@ -74,6 +59,8 @@ function docReady() {
     var diaSemana = d.getDay();
     tabClick.call(qs(`#btn${diaSemana}`));
     podcasts.updatePodcasts.call(this);
+    Turbolinks.start()
+
     console.log("pronto")
 }
 

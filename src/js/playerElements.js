@@ -12,6 +12,10 @@ export default {
         this.seekbar = document.querySelector("#seekbar");
         this.currentDuration = document.querySelector("#current-duration");
         this.totalDuration = document.querySelector("#total-duration");
+        this.playerSection = document.querySelector('.section.player');
+        this.btnMinMaxPlayer = document.querySelector('.operate-box .btn-min-max');
+        this.btnClosePlayer = document.querySelector('.operate-box .btn-close');
+
     },
     createAudioElement(audio) {
         // for cross browser
@@ -31,12 +35,15 @@ export default {
         this.volume.onchange = () => this.setVolume(this.volume.value);
         this.seekbar.oninput = () => this.setSeek(this.seekbar.value);
         this.seekbar.onchange = () => this.setSeek(this.seekbar.value);
-        this.seekbar.max = this.audio.duration;
-        console.log(this.audio.duration)
         if (this.audio.duration === Infinity) {
+            this.seekbar.max = 100;
             this.totalDuration.innerHTML = '<span class="mdi mdi-infinity"></span>';
         } else {
+            this.seekbar.max = this.audio.duration;
             this.totalDuration.innerText = secondsToMinutes(this.audio.duration);
+            this.totalDuration.innerHTML = '<span class="mdi mdi-infinity"></span>';
         }
+        this.btnMinMaxPlayer.onclick = () => this.togglePlayerSize();
+        this.btnClosePlayer.onclick = () => this.close();
     }
 };

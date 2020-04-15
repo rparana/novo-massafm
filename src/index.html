@@ -7,8 +7,11 @@
     <title>Massa FM</title>
     <link rel="stylesheet" href="css/style.css">
     <link type="image/x-icon" href="images/favicon.png" rel="shortcut icon">
-    <script src="js/turbolinks.js" data-turbolinks-track="reload"></script>
     <meta name="turbolinks-cache-control" content="no-cache">
+    <script src="js/turbolinks.js" data-turbolinks-track="reload"></script>
+    <script src="js/podcasts.js" data-turbolinks-eval="false"></script>
+    <script src="js/scripts.js" data-turbolinks-eval="true" type="module"></script>
+
 </head>
 
 <body>
@@ -356,7 +359,7 @@
 
 
     <!-- Inicio PodCasts -->
-    <section class="section section-podcast">
+    <section class="section section-podcast" id="section-podcast" data-turbolinks-permanent>
         <div class="content">
             <div class="logo-section mfm-roxo">
                 <div class="titulo-img">
@@ -1276,12 +1279,12 @@
 
 
     <!-- Inicio Player -->
-    <section class="section flyer-player" data-turbolinks-permanent>
+    <section id="flyer-player" class="section flyer-player" data-turbolinks-permanent>
         <div class="operate-box">
-            <span class="mdi mdi-chevron-down btn-min-max"></span>
-            <span class="mdi mdi-close btn-close"></span>
+            <span class="mdi mdi-chevron-up btn-min-max"></span>
+            <span class="mdi mdi-dock-window btn-close"></span>
         </div>
-        <div class="section player">
+        <div class="section player minimized hide">
             <div class="content">
                 <!-- <div class="titulo-img">
                     <img src="images/logo-bg-player.png" alt="">
@@ -1331,7 +1334,7 @@
     <!-- Fim Player -->
 
 
-    <script src="js/scripts.js" data-turbolinks-eval="false" type="module"></script>
+    <!-- <script src="js/player.js" data-turbolinks-eval="false"></script> -->
 </body>
 
 </html>
