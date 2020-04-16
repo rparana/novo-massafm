@@ -1,0 +1,54 @@
+.section.post {
+    padding: 20px 0;
+    background-image: url('../images/BACKGROUND-cabeçalhos.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    min-height: 900px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.section.post .content {
+    padding: 20px 0;
+}
+
+.post .post-header {
+    display: grid;
+    grid-template-areas: "img" "titulo" "meta";
+    justify-content: center;
+}
+
+.post .titulo-img {
+    display: flex;
+    grid-area: img;
+    grid-row-end: titulo;
+    justify-content: center;
+}
+
+.post .titulo-post {
+    display: flex;
+    grid-area: titulo;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 720px;
+    text-align: center;
+}
+
+.post .titulo-post h1 {
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.post .post-meta {
+    grid-area: meta;
+}
+
+.post .titulo-img img {
+    margin-top: -80px;
+}
+
+.post .logo-section .titulo {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}

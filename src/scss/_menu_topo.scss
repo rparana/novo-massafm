@@ -5,7 +5,7 @@
 }
 
 .section-menu-topo .menu-topo a {
-    color: rgba(0, 0, 0, .5);
+    color: $mfm-cinza;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -81,20 +81,20 @@
     .section-menu-topo .menu-topo .close {
         display: none;
     }
-    .menu-topo nav {
-        margin: auto;
+    .section-menu-topo .logo img {
+        min-width: 150px;
     }
     .menu-topo .nav {
-        display: flex;
-        margin: 0 10px;
+        display: grid;
+        grid-template-areas: "menu social";
+        grid-template-columns: 2fr minmax(75px, 150px);
+        align-items: center;
         justify-content: space-between;
         width: 100%;
     }
-    .section-menu-topo .social {
-        margin: auto;
-        color: $white;
-        padding: 0 5px 0 0;
-        font-size: 2.0em;
+    .menu-topo nav {
+        grid-area: menu;
+        margin: 0px 50px;
     }
     .section-menu-topo .menu-topo {
         width: 100%;
@@ -102,19 +102,34 @@
         align-content: center;
     }
     .section-menu-topo .social {
-        margin: auto;
+        grid-area: social;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
         color: $white;
-        padding: 0 5px;
         font-size: 2.0em;
     }
+    .section-menu-topo .social .icon-button {
+        //margin: 5px 0px 0px 5px;
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
     .section-menu-topo ul {
-        display: inline-flex;
+        display: flex;
+        justify-content: space-around;
     }
     .section-menu-topo .menu-topo li .icon {
         display: none;
     }
-    .section-menu-topo .menu-topo li {
-        padding: 0 5px;
+    .section-menu-topo .menu-topo li a {
+        padding: 5px 15px;
+        border-radius: 16px;
+    }
+    .section-menu-topo .menu-topo .nav ul li a {
+        color: $mfm-roxo;
+    }
+    .section-menu-topo .menu-topo li a:hover {
+        background: $mfm-amarelo;
     }
     .section-menu-topo .menu-topo nav .menu-active {
         position: relative;
@@ -122,10 +137,9 @@
     .section-menu-topo .menu-topo nav .menu-active::after {
         content: "";
         position: absolute;
-        bottom: -50%;
-        left: 50%;
-        transform: rotate(0deg);
-        margin-left: -5px;
+        bottom: 0;
+        left: 47%;
+        //margin-left: -50%;
         border-width: 3px;
         border-style: solid;
         border-color: $mfm-roxo;

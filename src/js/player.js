@@ -140,8 +140,8 @@ export default {
         this.playerSection.classList.add('minimized');
         this.btnMinMaxPlayer.classList.remove('mdi-chevron-down');
         this.btnMinMaxPlayer.classList.add('mdi-chevron-up');
-        this.btnClosePlayer.classList.remove('mdi-close');
-        this.btnClosePlayer.classList.add('mdi-dock-window');
+        this.btnClosePlayer.classList.remove('mdi-dock-window');
+        this.btnClosePlayer.classList.add('mdi-close');
     },
     togglePlayerSize() {
         this.minimized ? this.maxPlayer() : this.minPlayer();

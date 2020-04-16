@@ -4,15 +4,14 @@
     cursor: pointer;
     display: inline-block;
     font-size: 20px;
-    height: 32px;
-    line-height: 12px;
+    height: 30px;
     position: relative;
     text-align: center;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    width: 32px;
+    width: 30px;
 }
 
 
@@ -55,26 +54,26 @@
 }
 
 .icon-button:hover span {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    margin: -52%;
+    margin: -53%;
 }
 
 .twitter span {
-    background-color: $twitter-color;
+    background-color: $mfm-amarelo;
 }
 
 .facebook span {
-    background-color: $facebook-color;
+    background-color: $mfm-amarelo;
 }
 
 .youtube span {
-    background-color: $youtube-color;
+    background-color: $mfm-amarelo;
 }
 
 .whatsapp span {
-    background-color: $whatsapp-color;
+    background-color: $mfm-amarelo;
 }
 
 
@@ -82,10 +81,10 @@
 
 .icon-button i {
     background: none;
-    color: white;
-    height: 32px;
+    color: $white;
+    height: 30px;
     left: 0;
-    line-height: 32px;
+    line-height: 30px;
     position: absolute;
     top: 0;
     -webkit-transition: all 0.3s;
@@ -97,7 +96,7 @@
 }
 
 .icon-button:hover i {
-    color: $white !important;
+    color: $mfm-magenta !important;
 }
 
 @media (max-width: 767.9px) {}
