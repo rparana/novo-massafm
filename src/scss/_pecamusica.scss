@@ -2,7 +2,8 @@
 *******************/
 
 .section.pecaSuaMusica {
-    background: url('../images/bg-gradiente.png') top left / cover no-repeat;
+    background: #b31e8e;
+    background: radial-gradient(circle, #b31e8e 0%, #623c97 100%);
     min-height: 500px;
     display: grid;
     grid-template-areas: "card";
@@ -60,11 +61,4 @@
 .pecaSuaMusica .bnt-enviar {
     cursor: pointer;
     border: none;
-    color: $mfm-amarelo;
-    font-size: 14px;
-    font-weight: 700;
-    border-radius: 5px;
-    padding: 10px 40px;
-    width: inherit;
-    margin: 0px auto;
 }
