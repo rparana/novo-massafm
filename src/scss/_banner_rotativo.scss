@@ -1,32 +1,109 @@
+/* Banner Rotativo 
+*******************/
+
 .banner-slide {
+    display: grid;
+    grid-template-areas: "mleft body mright";
+    grid-template-columns: auto 90% auto;
     width: 100%;
-    height: 500px;
+    height: 486px;
     position: relative;
-    overflow: hidden;
-    border-bottom: 3px solid $mfm-amarelo;
+    //overflow: hidden;
 }
 
-.banner-slide .banner-background {
+.slider-content {
+    //position: relative;
+    grid-area: mleft;
+    grid-column-start: mleft;
+    grid-column-end: mright;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider-carrousel {
+    //position: relative;
+    display: grid;
+    grid-template-areas: "lcontainer ccontainer rcontainer";
+    grid-template-columns: repeat(3, 100%);
+    width: 100%;
+    height: 100%;
+    margin-left: -100%;
+    //overflow: hidden;
+}
+
+.carousel-item {
+    display: none;
+    grid-area: rcontainer;
     background-size: cover;
-    background-position: center center;
+    margin-right: -100%;
+    background-position: top;
     background-color: $white;
     background-repeat: no-repeat;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 500px;
+    height: 100%;
     width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: transform .6s ease-in-out;
+    -o-transition: transform .6s ease-in-out;
+    transition: transform .6s ease-in-out;
 }
 
-.banner-slide .banner-background .banner-overlay {
-    background-color: rgba($color: $mfm-cinza, $alpha: .3);
+@media (prefers-reduced-motion:reduce) {
+    .carousel-item {
+        -webkit-transition: none;
+        -o-transition: none;
+        transition: none;
+    }
+}
+
+.carousel-item.active,
+.carousel-item.carousel-item-next,
+.carousel-item.carousel-item-prev {
+    display: block
+}
+
+.carousel-item-next.carousel-item-left,
+.carousel-item-prev.carousel-item-right,
+.carousel-item.active {
+    grid-area: ccontainer;
+}
+
+.active.carousel-item-left {
+    grid-area: lcontainer;
+    // -webkit-transform: translateX(-100%);
+    // -moz-transform: translateX(-100%);
+    // -ms-transform: translateX(-100%);
+    // -o-transform: translateX(-100%);
+    // transform: translateX(-100%)
+}
+
+.active.carousel-item-right {
+    grid-area: rcontainer;
+    // -webkit-transform: translateX(-100%);
+    // -moz-transform: translateX(-100%);
+    // -ms-transform: translateX(-100%);
+    // -o-transform: translateX(-100%);
+    // transform: translateX(-100%)
+}
+
+.carousel-item-left {
+    animation: slideLeft 1s ease-in-out;
+}
+
+.carousel-item-right {
+    animation: slideRight 1s ease-in-out;
+}
+
+.banner-slide .carousel-item .banner-overlay {
+    background-color: rgba($color: $mfm-cinza, $alpha: .2);
     color: #fff;
     padding: 0px 20px;
     width: 100%;
     height: 100%;
 }
 
-.banner-slide .banner-background .banner-overlay .banner-content {
+.banner-slide .carousel-item .banner-overlay .banner-content {
     position: relative;
     max-width: 1200px;
     margin-left: auto;
@@ -34,62 +111,108 @@
     height: 100%;
 }
 
-.banner-slide .banner-background .banner-overlay .banner-content .banner-card {
-    border-left: 5px solid $mfm-amarelo;
+.banner-slide .carousel-item .banner-overlay .banner-content .card-info {
+    display: none;
+}
+
+.banner-slide .content.banner-content {
+    display: grid;
+    grid-template-areas: "body" "footer";
+    grid-template-rows: 1fr 35px;
+    grid-area: body;
+    width: 90%;
+    max-width: 1200px;
+    align-content: center;
+    align-items: center;
+}
+
+.banner-slide .banner-card {
+    display: grid;
+    grid-area: body;
+    grid-row-start: body;
+    grid-row-end: footer;
+    grid-template-areas: "title" "body" "footer";
+    grid-template-rows: 1fr auto 70px;
+    //max-width: 300px;
+    //max-height: 200px;
+    align-self: center;
     background-color: $white;
-    border-radius: 8px;
+    border-radius: 30px;
     z-index: 1;
 }
 
 .banner-card .card-title {
+    grid-area: title;
     font-family: $font-primary;
-    padding: 10px 10px;
+    padding: 20px 20px 10px;
+}
+
+.banner-card .card-title h3 {
+    line-height: 33px;
     text-align: left;
     font-weight: 900;
-    font-size: 36px;
+    font-size: 33px;
     color: $mfm-roxo;
 }
 
 .banner-card .card-body {
-    padding: 10px;
+    grid-area: body;
+    padding: 0 20px;
+}
+
+.banner-card .card-body p {
     font-family: $font-secundary;
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 22px;
     text-align: left;
     color: $mfm-cinza;
 }
 
 .banner-card .card-footer {
-    position: relative;
-    float: right;
-    padding: 10px;
+    grid-area: footer;
+    display: flex;
+    padding: 0px 20px;
     margin-bottom: 10px;
-    justify-content: right;
     align-content: center;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.banner-slide .next-slide,
-.banner-slide .prev-slide {
-    font-size: 48px;
-    color: #fff;
-    opacity: .5;
-    position: absolute;
+.banner-card .card-footer nav {
+    display: flex;
+}
+
+.banner-card .banner-nav {
+    display: flex;
+    text-align: center;
+    font-size: 40px;
+    height: 40px;
+    color: $mfm-roxo;
+    opacity: .8;
     z-index: 2;
-    top: calc(50% - 36px);
     cursor: pointer;
+    border-radius: 50%;
 }
 
-.banner-slide .prev-slide {
-    left: 3%;
+.banner-card .banner-nav:hover {
+    //color: $mfm-amarelo;
+    background: $mfm-amarelo;
 }
 
-.banner-slide .next-slide {
-    right: 3%;
+.banner-card .prev-slide {
+    text-align: right;
+}
+
+.banner-card .next-slide {
+    text-align: start;
 }
 
 .banner-slide .bullets-wrapper {
+    grid-area: footer;
+    justify-self: flex-end;
     font-size: 48px;
     color: #fff;
-    position: absolute;
+    //position: absolute;
     z-index: 2;
     bottom: 30px;
     right: 20%;
@@ -105,11 +228,36 @@
     cursor: pointer;
 }
 
+.banner-slide .bullets-wrapper .bullet-item.active {
+    background-color: $mfm-laranja;
+}
+
+.slideInFromLeft {
+    animation: slideInFromLeft 1s;
+    //animation-delay: 2s;
+}
+
+.slideInFromRight {
+    animation: slideInFromRight 1s;
+    //animation-delay: 2s;
+}
+
+.slideOutToLeft {
+    animation: slideOutToLeft 1s;
+    //animation-delay: 2s;
+}
+
+.slideOutToRight {
+    animation: slideOutToRight 1s;
+    //animation-delay: 2s;
+}
+
 @media (max-width: 767.9px) {
-    .banner-slide .banner-background .banner-overlay .banner-content .banner-card {
-        position: absolute;
-        width: 75%;
-        max-height: 250px;
+    .banner-slide .banner-card {
+        //position: absolute;
+        //width: 75%;
+        max-width: 400px;
+        //max-height: 250px;
         min-width: 200px;
         left: 10%;
         bottom: 20px;
@@ -117,16 +265,14 @@
 }
 
 // @media (min-width: 600px) {
-//     .banner-slide .banner-background .banner-overlay .banner-content .banner-card {
+//     .banner-slide .carousel-item .banner-overlay .banner-content .banner-card {
 //         width: 45%;
 //     }
 // }
 @media (min-width: 768px) {
-    .banner-slide .banner-background .banner-overlay .banner-content .banner-card {
-        position: absolute;
-        width: 45%;
-        max-width: 420px;
-        left: 10%;
-        bottom: 20px;
+    .banner-slide .banner-card {
+        //position: absolute;
+        width: 400px;
+        height: 260px;
     }
 }

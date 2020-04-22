@@ -1,10 +1,12 @@
 import player from "./player.js"
+import slider from "./slider.js"
 window.addEventListener("load", player.start());
 document.addEventListener("turbolinks:load", function() {
     player.loadPlayer();
     podcasts.updatePodcasts.call(this);
     document.querySelector('.topo-praca .btn-player').addEventListener('click', loadPlayer);
     docReady();
+    slider.start();
 })
 
 function qs(s) { return document.querySelector(s) }
@@ -35,7 +37,6 @@ function docReady() {
 
     btnClose.removeEventListener('click', closeMenu);
     btnClose.addEventListener('click', closeMenu);
-
     btnup.addEventListener('click', (event) => {
         event.preventDefault();
         console.log("btnup")
@@ -167,4 +168,20 @@ function loadPlayer() {
     player.start();
     player.play();
 
+}
+
+
+function valoresBanner() {
+    var banners = document.querySelectorAll('.banner-slide .banner-background');
+    console.log(
+        [].map.call(banners, function(item) {
+            let banner = {
+                id: item.getAttribute('id'),
+                title: item.querySelector('.card-title').innerHTML,
+                body: item.querySelector('.card-body').innerHTML,
+                link: item.querySelector('.card-footer a').getAttribute('href')
+            }
+            return banner;
+        })
+    )
 }

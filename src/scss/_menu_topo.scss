@@ -94,7 +94,7 @@
     }
     .menu-topo nav {
         grid-area: menu;
-        margin: 0px 50px;
+        margin: 0px 10px;
     }
     .section-menu-topo .menu-topo {
         width: 100%;
@@ -116,7 +116,11 @@
     }
     .section-menu-topo ul {
         display: flex;
-        justify-content: space-around;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .section-menu-topo .menu-topo li {
+        margin: 10px 0;
     }
     .section-menu-topo .menu-topo li .icon {
         display: none;
