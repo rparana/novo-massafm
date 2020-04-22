@@ -85,21 +85,24 @@ header {
 }
 
 .box-badge {
-    color: $mfm-amarelo;
+    color: $white;
+    text-align: center;
     background-color: $mfm-magenta;
     font-family: $font-primary;
     position: absolute;
     z-index: 2;
+    min-width: 120px;
+    height: 26px;
     left: 10px;
     top: 10px;
     font-size: 14px;
     font-weight: 600;
-    padding: 5px 10px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    padding: 3px 10px;
+    border-radius: 13px;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -o-border-radius: 13px;
 }
 
 .box-details.inside::before {
