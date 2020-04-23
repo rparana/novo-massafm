@@ -27,14 +27,8 @@ export default {
         this.isClosed ? this.maxPlayer() : '';
         // check if context is in suspended state (autoplay policy)
         this.isPlaying = true;
-        // if (this.audioCtx.state === 'suspended') {
-        //     this.audioCtx.resume().then(() => {
-        //         //this.audio.play();
-        //     });
-        // } else {
-        //     this.audio.play();
-        // }
         this.audio.play();
+        this.updateBgVolume();
         if (this.playPausePodCast !== null) {
             this.playPausePodCast.classList.remove('play')
             this.playPausePodCast.classList.add('pause')
@@ -82,7 +76,7 @@ export default {
 
     setVolume(value) {
         this.audio.volume = value / 100;
-        this.gainNode.gain.value = value;
+        this.updateBgVolume();
     },
 
     setSeek(value) {
@@ -104,6 +98,10 @@ export default {
         var perc = this.seekbar.value / this.seekbar.max * 100
         this.seekbar.style = `background: linear-gradient(to right, #6318af 0%, #b50091 ${perc}%, #606060 ${perc}%, #606060 100%);`
     },
+    updateBgVolume() {
+        var perc = this.volume.value / this.volume.max * 100
+        this.volume.style = `background: linear-gradient(to right, #6318af 0%, #b50091 ${perc}%, #606060 ${perc}%, #606060 100%);`
+    },
     update() {
         this.currentAudio = audios.track();
         this.cover.src = this.currentAudio.cover;
@@ -113,6 +111,7 @@ export default {
         //this.track = this.audioCtx.createMediaElementSource(this.audio);
         // connect our graph
         //this.track.connect(this.gainNode).connect(this.audioCtx.destination);
+        this.updateBgVolume();
         this.audio.onloadeddata = () => {
             elements.actions.call(this);
         };
