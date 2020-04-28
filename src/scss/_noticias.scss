@@ -1,141 +1,179 @@
+/* Sessão Noticias em Home
+**************************/
+
 .section.noticias {
-    padding: 20px 0;
-    background: $mfm-amarelo2;
-    //min-height: 600px;
-    overflow: hidden;
-    padding-bottom: 40px;
+  padding: 20px 0;
+  //background: $mfm-amarelo2;
+  //min-height: 600px;
+  overflow: hidden;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 10;
 }
 
 .section.noticias .content {
-    padding: 20px 0;
+  padding: 20px 0;
 }
 
 .noticias .logo-section {
-    position: relative;
-    text-align: center;
+  position: relative;
+  text-align: center;
 }
 
 .noticias .content header {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .grid-noticias {
-    width: 100%;
-    margin: 40px auto;
-    padding-left: 0;
-    padding-right: 0;
-    display: grid;
-    grid-template-areas: "destaque miniatura";
-    grid-template-columns: repeat(2, 50%);
+  width: 100%;
+  margin: 40px auto;
+  padding-left: 0;
+  padding-right: 0;
+  display: grid;
+  grid-template-areas: "destaque miniatura";
+  grid-template-columns: repeat(2, 50%);
 }
 
 .grid-noticias .destaque {
-    grid-area: destaque;
+  grid-area: destaque;
 }
 
 .grid-noticias .miniaturas {
-    grid-area: miniatura;
+  grid-area: miniatura;
 }
 
 .grid-noticias .post-item.featured {
-    padding-right: 4rem;
-    height: 344px;
-    margin-right: 15px;
-    box-sizing: border-box;
+  padding-right: 4rem;
+  height: 344px;
+  margin-right: 15px;
+  box-sizing: border-box;
 }
 
 .grid-noticias .post-item {
-    display: flex;
-    box-sizing: border-box;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    height: 162px;
-    border-radius: 4px;
-    text-decoration: none;
-    padding: 1rem 3rem 1rem 1rem;
-    position: relative;
-    //margin-right: 15px;
-    margin-bottom: 20px;
-    background-color: #6c6c6c;
-    background-size: cover;
-    background-position: center center;
-    overflow: hidden;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 162px;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 1rem 3rem 1rem 1rem;
+  position: relative;
+  //margin-right: 15px;
+  margin-bottom: 20px;
+  background-color: #6c6c6c;
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
 }
 
 .grid-noticias .post-item.featured h3 {
-    font-size: 24px;
-    line-height: 30px;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .grid-noticias .post-item h3 {
-    font-size: 14px;
-    line-height: 16px;
-    white-space: normal;
+  font-size: 14px;
+  line-height: 16px;
+  white-space: normal;
 }
 
 .row-footer {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 @media screen and (max-width: 767px) {
-    .grid-noticias {
-        display: flex;
-        flex-direction: row;
-        margin: 10px 0;
-    }
-    .grid-noticias .miniaturas {
-        display: flex;
-        flex-direction: row;
-    }
-    .featured-posts {
-        width: auto;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        white-space: nowrap;
-        // padding-left: 10px;
-        // padding-right: 10px;
-        margin-top: 0;
-        margin-bottom: 10px;
-        scrollbar-color: $mfm-amarelo $mfm-roxo !important;
-        scrollbar-width: thin !important;
-    }
-    .featured-posts::-webkit-scrollbar {
-        width: 5px;
-        height: 10px;
-    }
-    .featured-posts::-webkit-scrollbar-thumb {
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-        background: $mfm-amarelo;
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-    }
-    .featured-posts .grid-noticias .post-item.featured {
-        height: 142px;
-        margin-right: 8px;
-    }
-    .featured-posts .grid-noticias .post-item {
-        width: 240px;
-        height: 142px;
-        margin-bottom: 0;
-    }
-    .featured-posts .miniaturas .grid-50:not(:last-of-type) .post-item {
-        margin-right: 8px;
-    }
-    .featured-posts .grid-noticias .miniaturas .post-item:not(:last-of-type) {
-        margin-right: 8px;
-    }
-    .grid-noticias .post-item.featured h3 {
-        font-size: 14px;
-        line-height: 16px;
-    }
+  .grid-noticias {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+  }
+  .grid-noticias .miniaturas {
+    display: flex;
+    flex-direction: row;
+  }
+  .featured-posts {
+    width: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    // padding-left: 10px;
+    // padding-right: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    scrollbar-color: $mfm-amarelo $mfm-roxo !important;
+    scrollbar-width: thin !important;
+  }
+  .featured-posts::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+  }
+  .featured-posts::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: $mfm-amarelo;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+  .featured-posts .grid-noticias .post-item.featured {
+    height: 142px;
+    margin-right: 8px;
+  }
+  .featured-posts .grid-noticias .post-item {
+    width: 240px;
+    height: 142px;
+    margin-bottom: 0;
+  }
+  .featured-posts .miniaturas .grid-50:not(:last-of-type) .post-item {
+    margin-right: 8px;
+  }
+  .featured-posts .grid-noticias .miniaturas .post-item:not(:last-of-type) {
+    margin-right: 8px;
+  }
+  .grid-noticias .post-item.featured h3 {
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 
 @media (min-width: 768px) {
-    .featured-posts .miniaturas .grid-50:nth-of-type(2n) .post-item {
-        margin-left: 15px;
-    }
+  .featured-posts .miniaturas .grid-50:nth-of-type(2n) .post-item {
+    margin-left: 15px;
+  }
+}
+
+/*Página Noticias
+*********************/
+.section.banner-destaque {
+  background: url("../images/banner_noticias.png") center center / cover no-repeat;
+  height: 388px;
+}
+.banner-destaque .content {
+  display: grid;
+  grid-template-areas: "top" "bot";
+  grid-template-rows: repeat(2, 1fr);
+  height: 100%;
+}
+.banner-destaque .content .title {
+  grid-area: top;
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.banner-destaque .content .title p,
+.banner-destaque .content .title h1 {
+  color: $white;
+  font-weight: 900;
+}
+
+.banner-destaque .content .title h1 {
+  text-transform: none;
+  font-weight: 900;
+  font-size: 48px;
+}
+.banner-destaque .content .title p {
+  font-size: 24px;
 }

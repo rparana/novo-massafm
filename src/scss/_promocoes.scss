@@ -1,36 +1,37 @@
 .section.promocoes {
-    padding: 20px 0;
+  background-color: $mfm-amarelo2;
+  padding: 40px 0;
 }
 
 .section.promocoes .content {
-    padding: 20px 0;
+  padding: 20px 0;
 }
 
 .promocoes .carrossel {
-    height: 400px;
+  height: 400px;
 }
 
 .lista-promocoes {
-    list-style-type: none;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  list-style-type: none;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .promocao-item {
-    padding: 20px 10px;
-    width: 340px;
-    min-width: 210px;
-    height: 450px;
+  padding: 20px 10px;
+  width: 340px;
+  min-width: 210px;
+  height: 450px;
 }
 
 .promocao-item .box {
-    height: 100%;
+  height: 100%;
 }
 
 .promocoes .box-details-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

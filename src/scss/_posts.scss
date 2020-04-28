@@ -1,54 +1,133 @@
+/* CSS Página de Posts
+**********************/
+
 .section.post {
-    padding: 20px 0;
-    background-image: url('../images/BACKGROUND-cabeçalhos.png');
-    background-repeat: no-repeat;
-    background-position: top;
-    min-height: 900px;
-    overflow: hidden;
-    margin-bottom: 40px;
+  padding: 20px 0;
+  background-image: url("../images/BACKGROUND-cabeçalhos.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  min-height: 900px;
+  overflow: hidden;
+  margin-bottom: 40px;
 }
 
 .section.post .content {
-    padding: 20px 0;
+  padding: 20px 0;
 }
 
 .post .post-header {
-    display: grid;
-    grid-template-areas: "img" "titulo" "meta";
-    justify-content: center;
+  display: grid;
+  grid-template-areas: "img" "titulo" "meta";
+  justify-content: center;
 }
 
 .post .titulo-img {
-    display: flex;
-    grid-area: img;
-    grid-row-end: titulo;
-    justify-content: center;
+  display: flex;
+  grid-area: img;
+  grid-row-end: titulo;
+  justify-content: center;
 }
 
 .post .titulo-post {
-    display: flex;
-    grid-area: titulo;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 720px;
-    text-align: center;
+  display: flex;
+  grid-area: titulo;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 720px;
+  text-align: center;
 }
 
 .post .titulo-post h1 {
-    font-size: 36px;
-    font-weight: 900;
+  font-size: 36px;
+  font-weight: 900;
 }
 
 .post .post-meta {
-    grid-area: meta;
+  grid-area: meta;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
 }
 
 .post .titulo-img img {
-    margin-top: -80px;
+  margin-top: -80px;
 }
 
-.post .logo-section .titulo {
-    position: absolute;
-    top: 0;
+.post .post-meta .post-autor,
+.post .post-meta .post-date {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.post .post-meta .post-autor span,
+.post .post-meta .post-date span {
+  margin-right: 5px;
+}
+
+.post .post-meta .post-autor h5,
+.post .post-meta .post-date h5 {
+  font-weight: normal;
+}
+
+.post .post-meta .post-date {
+  color: $mfm-cinza;
+}
+
+.content .divider {
+  width: 100%;
+  height: 10px;
+  border-radius: 16px;
+  margin: 20px 0px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  color: $mfm-cinza;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.breadcrumbs h5 {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.post-list {
+  grid-area: list;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 800px;
+  margin-top: -100px;
+  padding-bottom: 50px;
+}
+.post-list .col-loadmore {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.post-list .btn-loadmore {
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  align-self: center;
+  margin: 30px auto;
+  background: #707070;
+  color: $white;
+  padding: 10px 40px;
+  border-radius: 20px;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .post-list {
     width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .post-list {
+    min-width: 700px;
+  }
 }

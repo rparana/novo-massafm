@@ -139,6 +139,7 @@ export default {
     },
     start() {
         this.getControls();
+        if (this.carrouselSlider === null) return
         this.getData();
         this.actions();
         this.update();
