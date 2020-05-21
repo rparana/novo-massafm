@@ -98,6 +98,7 @@
 .post-list {
   grid-area: list;
   display: flex;
+  align-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
   max-width: 800px;
@@ -105,21 +106,29 @@
   padding-bottom: 50px;
 }
 .post-list .col-loadmore {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-areas: "left right";
   width: 100%;
+  margin: 30px 0 50px;
 }
 .post-list .btn-loadmore {
   font-size: 16px;
   font-weight: 900;
   text-transform: uppercase;
   align-self: center;
-  margin: 30px auto;
   background: #707070;
   color: $white;
   padding: 10px 40px;
   border-radius: 20px;
   text-align: center;
+}
+.post-list .btn-loadmore.left {
+  grid-area: left;
+  justify-self: flex-start;
+}
+.post-list .btn-loadmore.right {
+  justify-self: flex-end;
+  grid-area: right;
 }
 @media screen and (max-width: 767px) {
   .post-list {

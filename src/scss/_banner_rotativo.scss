@@ -141,7 +141,7 @@
   grid-row-start: body;
   grid-row-end: footer;
   grid-template-areas: "title" "body" "footer";
-  grid-template-rows: 1fr auto 70px;
+  grid-template-rows: 1fr 1fr 70px;
   //max-width: 300px;
   //max-height: 200px;
   align-self: center;

@@ -19,10 +19,10 @@
 @import "rodape";
 @import "player";
 @import "posts";
-//auxiliares
+@import "single"; //auxiliares
 @import "auxiliares";
 @import "background";
 //Animações
 @import "animations";
 //import Material Icon
-@import '../../node_modules/material/scss/materialdesignicons.scss';
+@import "../../node_modules/material/scss/materialdesignicons.scss";

@@ -1,0 +1,90 @@
+/*Página Single
+*********************/
+.section.single.banner-destaque {
+  background-color: $mfm-laranja;
+  height: 388px;
+}
+.single.banner-destaque .content {
+  display: grid;
+  grid-template-areas: "top" "bot";
+  grid-template-rows: repeat(2, 1fr);
+  height: 100%;
+}
+.single.banner-destaque .content .title {
+  grid-area: top;
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+.single.banner-destaque .content .title .date,
+.single.banner-destaque .content .title h1 {
+  color: $white;
+}
+
+.single.banner-destaque .content .title h1 {
+  text-transform: none;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 45px;
+  max-width: 800px;
+}
+.single.banner-destaque .content .title .author,
+.single.banner-destaque .content .title .date {
+  font-size: 14px;
+  font-weight: 300;
+}
+.single.banner-destaque .content .title .author {
+  color: $mfm-roxo;
+}
+
+.col-post {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+.col-post .see-more {
+  width: 100%;
+  margin: 40px 0;
+}
+.col-post .see-more h1 {
+  color: $mfm-roxo;
+  font-weight: 900;
+  font-size: 48px;
+}
+/*Card-Single
+*******************/
+
+.card.single {
+  grid-template-areas: "image" "content";
+  grid-template-rows: 200px auto;
+}
+
+.card.single.video {
+  background: $white;
+  grid-template-areas: "image" "content";
+  grid-template-rows: minmax(200px, 540px) auto;
+}
+.card.single.video .card-image {
+  min-height: 218px;
+  max-height: 540px;
+}
+.card.single.video .video-player {
+  height: 540px;
+}
+.card.single.video .video {
+  max-width: 100%;
+  width: 100%;
+  min-height: 200px;
+  height: 100%;
+}
+.card .card-content {
+  padding: 40px;
+}
+.card .card-content p {
+  font-family: $font-open-sans;
+  color: $mfm-roxo;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 15px 0;
+}

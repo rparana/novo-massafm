@@ -1,5 +1,6 @@
 import player from "./player.js";
 import slider from "./slider.js";
+import geoLocation from "./geolocation.js";
 window.addEventListener("load", player.start());
 document.addEventListener("turbolinks:load", function () {
   player.loadPlayer();
@@ -7,7 +8,6 @@ document.addEventListener("turbolinks:load", function () {
   //document.querySelector('.topo-praca .btn-player').addEventListener('click', loadPlayer);
   addEvent(document.querySelector(".topo-praca .btn-player"), "click", loadPlayer);
   docReady();
-  slider.start();
 });
 
 function qs(s) {
@@ -45,11 +45,6 @@ function docReady() {
     console.log("btnup");
     window.scroll({ top: 0, behavior: "smooth" });
   });
-  // btnup.addEventListener('click', (event) => {
-  //     event.preventDefault();
-  //     console.log("btnup")
-  //     window.scroll({ top: 0, behavior: 'smooth' });
-  // })
 
   addEvent(scrollPromoEsq, "click", scroolGridEsq);
   addEvent(scrollPromoDir, "click", scroolGridDir);
@@ -86,6 +81,9 @@ function docReady() {
     element.addEventListener("click", tabClick);
   });
 
+  document.querySelectorAll("#list_pracas .list-group-item.list-group-item-action").forEach(function (element) {
+    element.addEventListener("click", selectPraca);
+  });
   //Modal Selecione a Praça
   qs(".praca .select").addEventListener("click", () => {
     qs(".modal-pracas").classList.add("show");
@@ -106,18 +104,20 @@ function docReady() {
     });
   });
 
-  //   window.addEventListener("scroll", function (e) {
-  //     var rightsidebar = qs(".right-sidebar .widgets");
+  window.addEventListener("scroll", function (e) {
+    var rightsidebar = qs(".right-sidebar .widgets");
 
-  //     if (!rightsidebar) return;
+    if (!rightsidebar) return;
 
-  //     if (window.scrollY > 539) {
-  //       rightsidebar.classList.add("fixed");
-  //     } else {
-  //       rightsidebar.classList.remove("fixed");
-  //     }
-  //   });
+    // if (window.scrollY > 539) {
+    //   rightsidebar.classList.add("fixed");
+    // } else {
+    //   rightsidebar.classList.remove("fixed");
+    // }
+  });
   console.log("pronto");
+  checkCookie();
+  slider.start();
 }
 
 function addEvent(obj, event, func) {
@@ -182,6 +182,27 @@ var tabClick = function () {
   this.classList.add("active-btn");
 };
 
+var selectPraca = function (event) {
+  event.preventDefault();
+  setPraca(this);
+  // var pracaID = this.getAttribute("id");
+  // var pracaNome = this.getAttribute("title");
+  // setCookie("regiao", pracaID, 365);
+  // setSession("regiao", pracaID);
+  // setCookie("regiao-nome", pracaNome, 365);
+  // setSession("regiao-nome", pracaNome);
+  // location.reload();
+};
+var setPraca = function (praca) {
+  var pracaID = praca.getAttribute("id");
+  var pracaNome = praca.getAttribute("title");
+  setCookie("regiao", pracaID, 365);
+  setSession("regiao", pracaID);
+  setCookie("regiao-nome", pracaNome, 365);
+  setSession("regiao-nome", pracaNome);
+  location.reload();
+};
+
 function loadPlayer() {
   console.log(this);
   document.querySelector("#title").setAttribute("value", this.getAttribute("data-title"));
@@ -207,4 +228,60 @@ function valoresBanner() {
       return banner;
     })
   );
+}
+
+function checkCookie() {
+  var cookieEnabled = navigator.cookieEnabled;
+  console.log(cookieEnabled);
+  if (cookieEnabled) {
+    var regiao = getCookie("regiao");
+    if (!regiao) {
+      geoLocation
+        .start()
+        .then((response) => {
+          setCidade(response);
+          //setCidade("CuRitiBa");
+        })
+        .catch(console.error);
+    }
+    //document.cookie = "testcookie";
+    //cookieEnabled = document.cookie.indexOf("testcookie") != -1;
+  }
+}
+
+function setCidade(cidade) {
+  //var val = e.target.value.toUpperCase();
+  console.log(cidade);
+  var list = document.querySelectorAll(".list-group .list-group-item");
+  var val = cidade.toUpperCase();
+  var filtro = (p) => p.getAttribute("title").toUpperCase().indexOf(val) >= 0;
+  var praca = Array.from(list).find(filtro);
+  if (praca) {
+    setPraca(praca);
+  }
+}
+
+function setCookie(key, value, expiry) {
+  var expires = new Date();
+  expires.setTime(expires.getTime() + expiry * 24 * 60 * 60 * 1000);
+  var string = key + "=" + value + ";expires=" + expires.toUTCString() + ";path=/";
+  document.cookie = string;
+}
+
+function getCookie(key) {
+  var keyValue = document.cookie.match("(^|;) ?" + key + "=([^;]*)(;|$)");
+  return keyValue ? keyValue[2] : null;
+}
+
+function setSession(key, value) {
+  sessionStorage.setItem(key, value);
+}
+
+function getSession(key) {
+  return sessionStorage.getItem(key);
+}
+
+function eraseCookie(key) {
+  var keyValue = getCookie(key);
+  setCookie(key, keyValue, "-1");
 }
