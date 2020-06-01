@@ -22,7 +22,7 @@
   font-size: 14px;
   color: $mfm-cinza;
   margin: 0 20px;
-  padding: 5px 5px 5px 10px;
+  padding: 5px 15px;
   border-radius: 16px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -414,6 +414,7 @@
 
 .listaOption a img {
   float: right;
+  max-width: 150px;
 }
 
 @media (min-width: 576px) {

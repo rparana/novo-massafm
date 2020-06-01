@@ -1,7 +1,7 @@
 /*Página Single
 *********************/
 .section.single.banner-destaque {
-  background-color: $mfm-laranja;
+  background-color: $mfm-laranja2;
   height: 388px;
 }
 .single.banner-destaque .content {
@@ -42,9 +42,17 @@
   flex-wrap: wrap;
   margin-bottom: 80px;
 }
+.col-post .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-post .row .card {
+  height: 100%;
+}
 
 .col-post .see-more {
-  width: 100%;
+  width: 95%;
   margin: 40px 0;
 }
 .col-post .see-more h1 {
@@ -55,15 +63,22 @@
 /*Card-Single
 *******************/
 
+.card.page {
+  grid-template-areas: "content";
+  grid-template-rows: minmax(200px, auto);
+}
 .card.single {
   grid-template-areas: "image" "content";
-  grid-template-rows: 200px auto;
+  grid-template-rows: minmax(200px, auto) auto;
+}
+.card.single .card-image {
+  max-height: unset;
 }
 
 .card.single.video {
   background: $white;
   grid-template-areas: "image" "content";
-  grid-template-rows: minmax(200px, 540px) auto;
+  // grid-template-rows: minmax(200px, 540px) auto;
 }
 .card.single.video .card-image {
   min-height: 218px;

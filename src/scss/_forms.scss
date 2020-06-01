@@ -1,138 +1,154 @@
 /* form starting stylings ------------------------------- */
 
 .group {
-    position: relative;
-    margin-bottom: 25px;
+  position: relative;
+  margin-bottom: 25px;
 }
 
 .form-style-material input {
-    font-size: 14px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 300px;
-    border: none;
-    border-bottom: 1px solid $mfm-roxo;
+  font-size: 14px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid $mfm-roxo;
 }
 
 .form-style-material input:focus {
-    outline: none;
+  outline: none;
 }
-
 
 /* LABEL ======================================= */
 
 .form-style-material label {
-    color: $mfm-cinza;
-    font-size: 14px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
+  color: $mfm-cinza;
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
 }
-
 
 /* active state */
 
-.form-style-material input:focus~label,
-.form-style-material input:valid~label {
-    top: -20px;
-    font-size: 14px;
-    color: $mfm-roxo;
+.form-style-material input:focus ~ label,
+.form-style-material input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: $mfm-roxo;
 }
-
 
 /* BOTTOM BARS ================================= */
 
 .form-style-material .bar {
-    position: relative;
-    display: block;
-    width: 300px;
+  position: relative;
+  display: block;
+  width: 300px;
 }
 
 .form-style-material .bar:before,
 .form-style-material .bar:after {
-    content: '';
-    height: 2px;
-    width: 0;
-    bottom: 1px;
-    position: absolute;
-    background: $mfm-roxo;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: $mfm-roxo;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
 }
 
 .form-style-material .bar:before {
-    left: 50%;
+  left: 50%;
 }
 
 .form-style-material .bar:after {
-    right: 50%;
+  right: 50%;
 }
-
 
 /* active state */
 
-.form-style-material input:focus~.bar:before,
-.form-style-material input:focus~.bar:after {
-    width: 50%;
+.form-style-material input:focus ~ .bar:before,
+.form-style-material input:focus ~ .bar:after {
+  width: 50%;
 }
-
 
 /* HIGHLIGHTER ================================== */
 
 .form-style-material .highlight {
-    position: absolute;
-    height: 60%;
-    width: 100px;
-    top: 25%;
-    left: 0;
-    pointer-events: none;
-    opacity: 0.5;
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
 }
-
 
 /* active state */
 
-.form-style-material input:focus~.highlight {
-    -webkit-animation: inputHighlighter 0.3s ease;
-    -moz-animation: inputHighlighter 0.3s ease;
-    animation: inputHighlighter 0.3s ease;
+.form-style-material input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
 }
-
 
 /* ANIMATIONS ================ */
 
 @-webkit-keyframes inputHighlighter {
-    from {
-        background: $mfm-roxo;
-    }
-    to {
-        width: 0;
-        background: transparent;
-    }
+  from {
+    background: $mfm-roxo;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
 }
 
 @-moz-keyframes inputHighlighter {
-    from {
-        background: $mfm-roxo;
-    }
-    to {
-        width: 0;
-        background: transparent;
-    }
+  from {
+    background: $mfm-roxo;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
 }
 
 @keyframes inputHighlighter {
-    from {
-        background: $mfm-roxo;
-    }
-    to {
-        width: 0;
-        background: transparent;
-    }
+  from {
+    background: $mfm-roxo;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+.wpcf7-form .wpcf7-form-control {
+  padding: 8px 10px;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 0;
+  background-color: #fff;
+  font-family: open sans, Helvetica, Verdana, sans-serif;
+  border: 0;
+  border-bottom: 1px solid #a7a7a7;
+}
+.wpcf7-form .wpcf7-form-control.wpcf7-textarea {
+  border: 1px solid #a7a7a7;
+}
+.wpcf7-form .wpcf7-submit.btn-card {
+  width: 200px;
+  height: 40px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 900;
+  padding: 5px 10px;
+  border-radius: 20px;
 }

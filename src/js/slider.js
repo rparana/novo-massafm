@@ -28,6 +28,7 @@ export default {
         body: item.querySelector(".card-body").innerHTML,
         link: item.querySelector(".card-footer a").getAttribute("href"),
         target: item.querySelector(".card-footer a").getAttribute("target"),
+        text: item.querySelector(".card-footer a").innerHTML,
       };
       return banner;
     });
@@ -130,6 +131,8 @@ export default {
     this.cardBody.innerHTML = this.dataCards[index].body;
     this.cardFooter.querySelector(".btn-card").setAttribute("href", this.dataCards[index].link);
     this.cardFooter.querySelector(".btn-card").setAttribute("target", this.dataCards[index].target);
+    console.log(this.dataCards[index].text);
+    this.cardFooter.querySelector(".btn-card").innerHTML = this.dataCards[index].text;
   },
   show(index) {
     if (index == this.index) return;

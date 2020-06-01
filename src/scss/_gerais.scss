@@ -277,11 +277,15 @@ header {
 .card .card-content {
   grid-area: content;
   padding: 15px 20px;
+  overflow: hidden;
 }
 .card .card-content .title {
   color: $mfm-roxo;
-  font-size: 30px;
+  font-size: 18px;
   font-weight: 900;
+  text-transform: uppercase;
+  overflow: hidden;
+  max-height: 150px;
 }
 .card .card-content .meta {
   color: $mfm-cinza;

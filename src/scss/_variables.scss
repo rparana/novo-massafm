@@ -1,28 +1,34 @@
 $mfm-amarelo: #fff203;
-$mfm-amarelo2:#feef0e;
+$mfm-amarelo2: #feef0e;
 $mfm-laranja: #e8b200;
+$mfm-laranja2: #fda100;
 $mfm-magenta: #b50091;
 $mfm-roxo: #6318af;
 $mfm-cinza: #606060;
 $mfm-cinza-escuro: #333333;
-$mfm-cinza-claro: #E6E6E6;
-$white:#ffffff;
-$black:#000000;
-$test:#0076ff;
+$mfm-cinza-claro: #e6e6e6;
+$white: #ffffff;
+$black: #000000;
+$test: #0076ff;
 $twitter-color: #4099ff;
-$facebook-color: #3B5998;
+$facebook-color: #3b5998;
 $youtube-color: #ff0000;
 $whatsapp-color: #34af23;
 $color-a-hover: $mfm-roxo;
 $body-bg: $white !default;
-$theme-colors: ( "mfm-amarelo": $mfm-amarelo, "mfm-laranja": $mfm-laranja, "mfm-magenta": $mfm-magenta, "mfm-roxo": $mfm-roxo, "mfm-cinza": $mfm-cinza, "mfm-cinza-claro": $mfm-cinza-claro);
-$fonts-path: '../fonts/';
-$font-filson-soft: 'Filson Soft';
-$font-open-sans: 'Open Sans';
-$font-sans-serif:sans-serif;
-$font-family-massaFM: $font-filson-soft,
-$font-open-sans,
-$font-sans-serif;
+$theme-colors: (
+  "mfm-amarelo": $mfm-amarelo,
+  "mfm-laranja": $mfm-laranja,
+  "mfm-magenta": $mfm-magenta,
+  "mfm-roxo": $mfm-roxo,
+  "mfm-cinza": $mfm-cinza,
+  "mfm-cinza-claro": $mfm-cinza-claro,
+);
+$fonts-path: "../fonts/";
+$font-filson-soft: "Filson Soft";
+$font-open-sans: "Open Sans";
+$font-sans-serif: sans-serif;
+$font-family-massaFM: $font-filson-soft, $font-open-sans, $font-sans-serif;
 $font-primary: $font-filson-soft;
 $font-secundary: $font-open-sans;
 // Spacing
@@ -33,11 +39,35 @@ $font-secundary: $font-open-sans;
 $spacer: 1rem !default;
 $spacers: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$spacers: map-merge( ( 0: 0, 1: ($spacer * .25), 2: ($spacer * .5), 3: $spacer, 4: ($spacer * 1.5), 5: ($spacer * 3)), $spacers);
+$spacers: map-merge(
+  (
+    0: 0,
+    1: (
+      $spacer * 0.25,
+    ),
+    2: (
+      $spacer * 0.5,
+    ),
+    3: $spacer,
+    4: (
+      $spacer * 1.5,
+    ),
+    5: (
+      $spacer * 3,
+    ),
+  ),
+  $spacers
+);
 // Grid breakpoints
 //
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
-$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px) !default;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
 $enable-deprecation-messages: true !default;
 $enable-gradients: true !default;

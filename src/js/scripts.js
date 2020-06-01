@@ -21,17 +21,16 @@ const playPodcast = (b) => {
 const pausePodcast = (b) => {
   player.pause();
 };
-var scrollPromoEsq = qs("a.scroll-promo.esq");
-var scrollPromoDir = qs("a.scroll-promo.dir");
-var listaPromocoes = qs(".promocoes .carrossel-items");
-var btnMenu = qs(".nav-toggle");
-var btnClose = qs(".close");
-var menu = qs(".menu-topo");
-var btnup = qs(".rodape .botao-up");
 
 //document.addEventListener('DOMContentLoaded', docReady);
 
 function docReady() {
+  var scrollPromoEsq = qs("a.scroll-promo.esq");
+  var scrollPromoDir = qs("a.scroll-promo.dir");
+  var btnMenu = qs(".nav-toggle");
+  var btnClose = qs(".close");
+  var btnup = qs(".rodape .botao-up");
+
   addEvent(btnMenu, "click", toggleMenu);
   // btnMenu.removeEventListener('click', toggleMenu)
   // btnMenu.addEventListener('click', toggleMenu)
@@ -61,6 +60,7 @@ function docReady() {
 
   document.querySelectorAll(".podcast-item-player .controls .btn-play").forEach(function (element) {
     const url = element.querySelector(".track").getAttribute("url");
+    const img = element.querySelector(".track").getAttribute("img");
     const title = element.querySelector(".track").getAttribute("title");
     const btnPod = element;
     element.addEventListener("click", (e) => {
@@ -68,7 +68,7 @@ function docReady() {
       console.log(btnPod);
       document.querySelector("#title").setAttribute("value", title);
       document.querySelector("#url").setAttribute("value", url);
-      document.querySelector("#img").setAttribute("value", "images/logo_podcasts.png");
+      document.querySelector("#img").setAttribute("value", img);
       document.querySelector("#live").setAttribute("value", "false");
       if (btnPod.classList.contains("first")) {
         resetPodcasts();
@@ -128,6 +128,7 @@ function addEvent(obj, event, func) {
 
 function toggleMenu(event) {
   event.preventDefault();
+  var menu = qs(".menu-topo");
   menu.classList.toggle("active");
 }
 
@@ -146,11 +147,13 @@ const resetPodcasts = () => {
 
 function scroolGridDir(event) {
   event.preventDefault();
+  var listaPromocoes = qs(".promocoes .carrossel-items");
   scroolGrid(listaPromocoes, 360, true);
 }
 
 function scroolGridEsq(event) {
   event.preventDefault();
+  var listaPromocoes = qs(".promocoes .carrossel-items");
   scroolGrid(listaPromocoes, 360, false);
 }
 
