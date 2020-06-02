@@ -242,6 +242,9 @@ header {
   max-width: 800px;
   margin: 15px 5px;
 }
+.col-50 .card {
+  height: 95%;
+}
 .card.wide {
   display: grid;
   grid-template-areas: "image content" "image footer";

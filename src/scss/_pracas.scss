@@ -15,6 +15,7 @@
 .topo-praca .btn-player {
   display: flex;
   cursor: pointer;
+  white-space: nowrap;
   align-content: center;
   align-items: center;
   justify-content: center;
@@ -82,6 +83,9 @@
   font-size: 14px;
   font-weight: 900;
   margin-right: 5px;
+}
+.praca .select h3.mobile {
+  display: none;
 }
 
 .praca h2 {
@@ -288,6 +292,32 @@
 .list-group-horizontal .list-group-item + .list-group-item.active {
   margin-left: -1px;
   border-left-width: 1px;
+}
+
+@media screen and (max-width: 767px) {
+  .topo-praca .btn-player {
+    margin-left: 0;
+  }
+  .topo-praca .btn-player,
+  .praca .select h3,
+  .praca h3 {
+    font-size: 12px;
+  }
+  .praca h3,
+  .praca .select h3 {
+    display: none;
+  }
+  .praca .select h3.mobile {
+    display: block;
+  }
+  .section.section-menu-topo {
+    display: flex;
+    align-items: center;
+    height: 51px;
+  }
+  .topo-praca .content {
+    justify-content: space-between;
+  }
 }
 
 @media (min-width: 576px) {

@@ -325,7 +325,7 @@
   }
   .podcast-box {
     grid-template-areas: "plataformas" "lista";
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 100px auto;
     grid-template-columns: auto;
   }
   // .section-podcast .plataformas,

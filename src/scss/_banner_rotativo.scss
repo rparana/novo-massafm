@@ -263,15 +263,31 @@
   //animation-delay: 2s;
 }
 
-@media (max-width: 767.9px) {
+@media screen and (max-width: 767.9px) {
   .banner-slide .banner-card {
-    //position: absolute;
-    //width: 75%;
     max-width: 400px;
-    //max-height: 250px;
     min-width: 200px;
-    left: 10%;
-    bottom: 20px;
+    margin-top: 300px;
+  }
+  .banner-slide {
+    margin-bottom: -10px;
+  }
+  .banner-card .card-title h3 {
+    line-height: 24px;
+    text-align: left;
+    font-weight: 900;
+    font-size: 24px;
+    color: $mfm-roxo;
+  }
+  .banner-card .card-body p {
+    display: none;
+  }
+  .banner-slide .banner-card {
+    grid-template-areas: "title" "footer";
+    grid-template-rows: 1fr 70px;
+  }
+  .banner-card .card-footer nav {
+    display: none;
   }
 }
 

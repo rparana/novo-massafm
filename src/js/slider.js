@@ -1,4 +1,5 @@
 export default {
+  dev: false,
   index: 0,
   timeSlide: 1000,
   timeToChange: 5000,
@@ -9,6 +10,9 @@ export default {
   timerObj: null,
   timerStarted: false,
   direction: "",
+  log(object) {
+    if (this.dev) console.log(object);
+  },
   getControls() {
     this.carrouselSlider = document.querySelector(".slider-carrousel");
     this.banners = document.querySelectorAll(".banner-slide .carousel-item");
@@ -62,8 +66,8 @@ export default {
     if (this.index >= this.banners.length) this.index = 0;
     let b = this.banners[this.index];
     if (typeof b === "undefined") {
-      console.log(this.index);
-      console.log(this.banners);
+      this.log(this.index);
+      this.log(this.banners);
       return;
     }
 
@@ -131,7 +135,7 @@ export default {
     this.cardBody.innerHTML = this.dataCards[index].body;
     this.cardFooter.querySelector(".btn-card").setAttribute("href", this.dataCards[index].link);
     this.cardFooter.querySelector(".btn-card").setAttribute("target", this.dataCards[index].target);
-    console.log(this.dataCards[index].text);
+    this.log(this.dataCards[index].text);
     this.cardFooter.querySelector(".btn-card").innerHTML = this.dataCards[index].text;
   },
   show(index) {

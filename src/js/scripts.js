@@ -6,9 +6,13 @@ document.addEventListener("turbolinks:load", function () {
   player.loadPlayer();
   podcasts.updatePodcasts.call(this);
   //document.querySelector('.topo-praca .btn-player').addEventListener('click', loadPlayer);
-  addEvent(document.querySelector(".topo-praca .btn-player"), "click", loadPlayer);
   docReady();
 });
+
+function log(object) {
+  var dev = false;
+  if (dev) console.log(object);
+}
 
 function qs(s) {
   return document.querySelector(s);
@@ -41,9 +45,11 @@ function docReady() {
 
   addEvent(btnup, "click", (event) => {
     event.preventDefault();
-    console.log("btnup");
+    log("btnup");
     window.scroll({ top: 0, behavior: "smooth" });
   });
+
+  addEvent(document.querySelector(".topo-praca .btn-player"), "click", loadPlayer);
 
   addEvent(scrollPromoEsq, "click", scroolGridEsq);
   addEvent(scrollPromoDir, "click", scroolGridDir);
@@ -65,7 +71,7 @@ function docReady() {
     const btnPod = element;
     element.addEventListener("click", (e) => {
       e.preventDefault();
-      console.log(btnPod);
+      log(btnPod);
       document.querySelector("#title").setAttribute("value", title);
       document.querySelector("#url").setAttribute("value", url);
       document.querySelector("#img").setAttribute("value", img);
@@ -84,19 +90,25 @@ function docReady() {
   document.querySelectorAll("#list_pracas .list-group-item.list-group-item-action").forEach(function (element) {
     element.addEventListener("click", selectPraca);
   });
+
   //Modal Selecione a Praça
-  qs(".praca .select").addEventListener("click", () => {
-    qs(".modal-pracas").classList.add("show");
+  document.querySelectorAll(".praca .select").forEach(function (element) {
+    element.addEventListener("click", () => {
+      qs(".modal-pracas").classList.add("show");
+    });
   });
+  // qs(".praca .select").addEventListener("click", () => {
+  //   qs(".modal-pracas").classList.add("show");
+  // });
   window.onclick = function (event) {
-    //console.log(event.target);
+    //log(event.target);
     if (event.target == qs(".modal-pracas") || event.target == qs(".modal-pracas .mdi-close")) {
       qs(".modal-pracas").classList.remove("show");
     }
   };
   qs("#filter").addEventListener("keyup", (e) => {
     var val = e.target.value.toUpperCase();
-    console.log(val);
+    log(val);
     var list = document.querySelectorAll(".list-group .list-group-item");
 
     list.forEach(function (element) {
@@ -115,7 +127,7 @@ function docReady() {
     //   rightsidebar.classList.remove("fixed");
     // }
   });
-  console.log("pronto");
+  log("pronto");
   checkCookie();
   slider.start();
 }
@@ -134,6 +146,7 @@ function toggleMenu(event) {
 
 function closeMenu(event) {
   event.preventDefault();
+  var menu = qs(".menu-topo");
   menu.classList.toggle("active");
 }
 
@@ -163,11 +176,11 @@ function scroolGrid(grid, tamanho, dir) {
   } else {
     var pos = grid.scrollLeft - tamanho;
   }
-  //console.log(pos);
+  //log(pos);
   grid.scroll({ left: pos, behavior: "smooth" });
   //grid.scrollLeft = pos;
-  //console.log(document.getElementById('container'))
-  //console.log(grid);
+  //log(document.getElementById('container'))
+  //log(grid);
 }
 
 function resetTabs() {
@@ -207,7 +220,7 @@ var setPraca = function (praca) {
 };
 
 function loadPlayer() {
-  console.log(this);
+  log(this);
   document.querySelector("#title").setAttribute("value", this.getAttribute("data-title"));
   document.querySelector("#url").setAttribute("value", this.getAttribute("data-url"));
   document.querySelector("#img").setAttribute("value", this.getAttribute("data-img"));
@@ -220,7 +233,7 @@ function loadPlayer() {
 
 function valoresBanner() {
   var banners = document.querySelectorAll(".banner-slide .banner-background");
-  console.log(
+  log(
     [].map.call(banners, function (item) {
       let banner = {
         id: item.getAttribute("id"),
@@ -235,7 +248,7 @@ function valoresBanner() {
 
 function checkCookie() {
   var cookieEnabled = navigator.cookieEnabled;
-  console.log(cookieEnabled);
+  log(cookieEnabled);
   if (cookieEnabled) {
     var regiao = getCookie("regiao");
     if (!regiao) {
@@ -254,7 +267,7 @@ function checkCookie() {
 
 function setCidade(cidade) {
   //var val = e.target.value.toUpperCase();
-  console.log(cidade);
+  log(cidade);
   var list = document.querySelectorAll(".list-group .list-group-item");
   var val = cidade.toUpperCase();
   var filtro = (p) => p.getAttribute("title").toUpperCase().indexOf(val) >= 0;
