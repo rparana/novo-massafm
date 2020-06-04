@@ -12,7 +12,7 @@
 
 ## Layout pretendido.
 
-![Layout](Layout.jpg)
+![Layout](Layout.png)
 
 ## Caso necessitem de alguma informação favor entrar em contato
 
