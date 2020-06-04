@@ -130,7 +130,8 @@ function docReady() {
   log("pronto");
   checkCookie();
   slider.start();
-}
+  getPromotions();
+} //FIM doReady
 
 function addEvent(obj, event, func) {
   if (obj === null) return;
@@ -300,4 +301,107 @@ function getSession(key) {
 function eraseCookie(key) {
   var keyValue = getCookie(key);
   setCookie(key, keyValue, "-1");
+}
+
+function getPromotions() {
+  var size = 0;
+  let promoList = qs(".lista-promocoes");
+  // let apiGeral = qs("#urlPromoGeral");
+  let apiCidade = qs("#urlPromoCidade");
+  if (typeof promoList === undefined || !promoList) return;
+  // var urlGeral = typeof apiGeral === undefined ? "" : apiGeral.getAttribute("url");
+  var urlCidade = typeof apiCidade === undefined ? "" : apiCidade.getAttribute("url");
+  // log(urlGeral);
+  log(urlCidade);
+  // if (urlGeral != "") {
+  //   doGet(urlGeral)
+  //     .then((response) => {
+  //       var items = size > 0 ? response.slice(0, size) : response;
+  //       log(response);
+  //       log(items);
+  //       items.forEach((item) => {
+  //         populatePromotionList(item);
+  //       });
+  //     })
+  //     .catch((reject) => {
+  //       console.error(reject);
+  //     });
+  // }
+  if (urlCidade != "") {
+    doGet(urlCidade)
+      .then((response) => {
+        var items = size > 0 ? response.slice(0, size) : response;
+        log(response);
+        log(items);
+        response.list.hotsites.forEach((item) => {
+          populatePromotionList(item);
+        });
+      })
+      .catch((reject) => {
+        console.error(reject);
+      });
+  }
+}
+
+function doGet(url) {
+  const promiseCallback = (resolve, reject) => {
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) throw new Error("Erro ao executar requisição, Status: $(response.status)");
+        return response.json();
+      })
+      .then(resolve)
+      .catch(reject);
+  };
+  return new Promise(promiseCallback);
+}
+
+function populatePromotionList(item) {
+  /* Estrutura para ser montada
+  <li class="promocao-item">
+    <div class="box">
+      <div class="box-cover">
+        <img class="box-shadow radius-10" src="images/01_promocao.png" alt="" />
+      </div>
+      <div class="box-details">
+        <div class="box-details-info">
+          <a href="#" class="btn-card">PARTICIPE</a>
+        </div>
+      </div>
+    </div>
+  </li>
+*/
+  let promoList = qs(".lista-promocoes");
+  if (typeof promoList === undefined) return;
+  var node = document.createElement("LI"); // Create a <li> node
+  var box = document.createElement("div"); // Create a <div> node
+  var box_cover = document.createElement("div"); // Create a <div> node
+  var img_box_cover = document.createElement("img"); // Create a <img> node
+  var box_detail = document.createElement("div"); // Create a <div> node
+  var box_detail_info = document.createElement("div"); // Create a <div> node
+  var link = document.createElement("a"); // Create a <a> node
+
+  //Inserir classes
+  node.classList.add("promocao-item");
+  box.classList.add("box");
+  box_cover.classList.add("box-cover");
+  img_box_cover.classList.add("box-shadow", "radius-10");
+  box_detail.classList.add("box-details");
+  box_detail_info.classList.add("box-details-info");
+  link.classList.add("btn-card");
+
+  //preencher itens (imagen e link)
+  img_box_cover.setAttribute("src", item.image_url);
+  // link.setAttribute("href", item.url);
+  link.setAttribute("onclick", `openHotsite('${item.uuid}', '${item.company_uuid}')`);
+  link.innerText = "PARTICIPE";
+
+  //montar o item
+  box_cover.appendChild(img_box_cover);
+  box_detail_info.appendChild(link);
+  box_detail.appendChild(box_detail_info);
+  box.appendChild(box_cover);
+  box.appendChild(box_detail);
+  node.appendChild(box); // Append the box to <li>
+  promoList.appendChild(node); // Append <li> to <ul>
 }

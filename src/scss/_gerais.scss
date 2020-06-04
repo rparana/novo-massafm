@@ -168,6 +168,7 @@ header {
 }
 
 .btn-card {
+  cursor: pointer;
   display: flex;
   background-image: linear-gradient(to right, $mfm-roxo, $mfm-magenta);
   justify-items: center;

@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/style.css" />
     <link type="image/x-icon" href="images/favicon.png" rel="shortcut icon" />
     <meta name="turbolinks-cache-control" content="no-cache" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js" data-turbolinks-eval="false"></script>
+    <script id="audients_script" src="https://app.audients.com.br/statics/list.js?fullscreen=null&onlyfirst=null"></script>
+
     <script src="js/turbolinks.js" data-turbolinks-track="reload"></script>
     <script src="js/podcasts.js" data-turbolinks-eval="false"></script>
     <script src="js/scripts.js" data-turbolinks-eval="false" type="module"></script>
@@ -341,7 +344,7 @@
         <div class="featured-posts">
           <div class="grid-noticias">
             <div class="destaque">
-              <a href="noticias.html" class="post-item featured box-shadow" style="background-image: url('images/noticias-img01.jpg');">
+              <a href="single.html" class="post-item featured box-shadow" style="background-image: url('images/noticias-img01.jpg');">
                 <div class="box-badge">
                   Notícias
                 </div>
@@ -358,9 +361,9 @@
             </div>
             <div class="miniaturas">
               <div class="grid-50 tablet-grid-50 mobile-grid-100 menores">
-                <a href="noticias.html" class="post-item box-shadow" style="background-image: url('images/noticias-img02.jpg');">
+                <a href="singleYT.html" class="post-item box-shadow" style="background-image: url('images/noticias-img02.jpg');">
                   <div class="box-badge">
-                    Notícias
+                    Vídeo
                   </div>
                   <div class="box-cover"></div>
                   <div class="box-details inside">
@@ -371,7 +374,7 @@
                 </a>
               </div>
               <div class="grid-50 tablet-grid-50 mobile-grid-100">
-                <a href="noticias.html" class="post-item box-shadow" style="background-image: url('images/noticias-img03.jpg');">
+                <a href="single.html" class="post-item box-shadow" style="background-image: url('images/noticias-img03.jpg');">
                   <div class="box-badge">
                     Eventos
                   </div>
@@ -384,7 +387,7 @@
                 </a>
               </div>
               <div class="grid-50 tablet-grid-50 mobile-grid-100">
-                <a href="noticias.html" class="post-item box-shadow" style="background-image: url('images/noticias-img04.jpg');">
+                <a href="singleYT.html" class="post-item box-shadow" style="background-image: url('images/noticias-img04.jpg');">
                   <div class="box-badge">
                     Vídeos
                   </div>
@@ -397,7 +400,7 @@
                 </a>
               </div>
               <div class="grid-50 tablet-grid-50 mobile-grid-100">
-                <a href="noticias.html" class="post-item box-shadow" style="background-image: url('images/noticias-img05.jpg');">
+                <a href="single.html" class="post-item box-shadow" style="background-image: url('images/noticias-img05.jpg');">
                   <div class="box-badge">
                     Eventos
                   </div>
@@ -425,49 +428,17 @@
             <h1>Promoções Massa FM</h1>
           </div>
           <div class="separador"></div>
+          <i id="urlPromoGeral" url=""></i>
+          <i
+            id="urlPromoCidade"
+            url="https://app.audients.com.br:4002/hotsites-lists/f4cdf8ce-d16c-4aa6-9294-406c66142193/b240eca7-ad8a-4775-b144-0a999ccb697f"
+          ></i>
         </header>
         <div class="carrossel">
           <a class="carrossel-botao scroll-promo esq"><span class="mdi mdi-chevron-left"></span></a>
           <a class="carrossel-botao scroll-promo dir"><span class="mdi mdi-chevron-right"></span></a>
           <div class="carrossel-items" id="container">
-            <ul class="lista-promocoes">
-              <li class="promocao-item">
-                <div class="box">
-                  <div class="box-cover">
-                    <img class="box-shadow radius-10" src="images/01_promocao.png" alt="" />
-                  </div>
-                  <div class="box-details">
-                    <div class="box-details-info">
-                      <a href="#" class="btn-card">PARTICIPE</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="promocao-item">
-                <div class="box">
-                  <div class="box-cover">
-                    <img class="box-shadow radius-10" src="images/02_promocao.png" alt="" />
-                  </div>
-                  <div class="box-details">
-                    <div class="box-details-info">
-                      <a href="#" class="btn-card">PARTICIPE</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="promocao-item">
-                <div class="box">
-                  <div class="box-cover">
-                    <img class="radius-10 box-shadow" src="images/03_promocao.png" alt="" />
-                  </div>
-                  <div class="box-details">
-                    <div class="box-details-info">
-                      <a href="#" class="btn-card">PARTICIPE</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
+            <ul class="lista-promocoes"></ul>
           </div>
         </div>
       </div>
@@ -640,7 +611,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="row-footer"><a href="#" class="btn-card"> Carregar Mais</a></div>
+              <div class="row-footer"><a href="podcasts.html" class="btn-card"> Carregar Mais</a></div>
             </div>
           </div>
         </div>
@@ -980,7 +951,7 @@
           <div class="card-body">
             <div class="form-style-material">
               <form>
-                <div class="group">
+                <!-- <div class="group">
                   <input type="text" name="nome" id="nome" required />
                   <span class="highlight"></span>
                   <span class="bar"></span>
@@ -1005,8 +976,8 @@
                   <span class="highlight"></span>
                   <span class="bar"></span>
                   <label>Música</label>
-                </div>
-                <input type="submit" class="btn-card bnt-enviar" value="ENVIAR" />
+                </div> -->
+                <input type="submit" class="btn-card bnt-enviar" value="PEDIR" />
               </form>
             </div>
           </div>

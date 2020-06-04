@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste Hotsite</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js"></script>
+    <!-- <script id="audients_script" src="http://192.168.0.187:8081/statics/hotsite.js?fullscreen=false&onlyfirst=false&hotsite=e1668cbf-d9bc-42ed-94c5-b393b5c3afcc&company=9d905e72-7a5f-4a12-b40f-466315e6c279"></script> -->
+    <!-- <script
+      id="audients_script"
+      src="http://app.audients.com.br:8081/statics/hotsite.js?fullscreen=true&onlyfirst=true&hotsite=f6bf333b-fb3f-480e-9e79-f46884b73b60&company=9d905e72-7a5f-4a12-b40f-466315e6c279"
+    > </script> -->
+    <script
+      id="audients_script"
+      src="https://app.audients.com.br/statics/list.js?fullscreen=null&onlyfirst=null"
+    > </script>
+
+
+</head>
+<body>
+    <div class="btn"></div>
+</body>
+<script>
+
+window.addEventListener("load", async function(){
+  let response = await new Promise((resolve, reject) => {
+    axios.get(`https://app.audients.com.br:4002/hotsites-lists/f4cdf8ce-d16c-4aa6-9294-406c66142193/b240eca7-ad8a-4775-b144-0a999ccb697f`, {timeout: 3000
+    }).then(res => {
+      resolve(res.data)
+    }).catch(() => {
+      resolve({
+        ok: false,
+        message: 'Não foi possivel se conectar com a API. (https://app.audients.com.br:4002/hotsites-frame/verify)'
+      })
+    })
+  });
+
+  if(!response.ok){
+    console.error(response.message)
+    return
+  }
+
+  var divBtn = document.querySelector('.btn')
+
+  for(hotsite of response.list.hotsites) {
+    var hotsiteEl = document.createElement('button');
+    hotsiteEl.setAttribute('onclick', `openHotsite('${hotsite.uuid}', '${hotsite.company_uuid}')`)
+    hotsiteEl.innerText = hotsite.promotion.title
+    divBtn.appendChild(hotsiteEl)
+  }
+});
+
+</script>
+
+</html>

@@ -358,6 +358,7 @@ header {
   transform: translate(0, 50%); }
 
 .btn-card {
+  cursor: pointer;
   display: flex;
   background-image: linear-gradient(to right, #6318af, #b50091);
   justify-items: center;
@@ -1810,6 +1811,9 @@ input[type="range"]::-moz-focus-outer {
   display: flex;
   justify-content: center;
   align-items: center; }
+
+#framebackground {
+  z-index: 999; }
 
 /* Sessão Noticias em Home
 **************************/
