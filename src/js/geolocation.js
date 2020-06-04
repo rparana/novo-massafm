@@ -2,7 +2,7 @@ export default {
   lat: "",
   lng: "",
   latlng: "",
-  key: "AIzaSyC0P3pW0IEiv9NIl29TxCsR3vtbP7G7sNA",
+  key: "",
   urlJson: "https://maps.googleapis.com/maps/api/geocode/json?result_type=administrative_area_level_2",
   cidade: "São Paulo",
   geolocation: null,
