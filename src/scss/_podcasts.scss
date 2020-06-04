@@ -70,25 +70,35 @@
 }
 
 .podcast-banner {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
   grid-area: banner;
   grid-row-start: banner;
   grid-row-end: plataformas;
   // background: url('../images/bg-banner-podcast.png') no-repeat;
-  background: linear-gradient(90deg, $mfm-amarelo, $mfm-laranja);
+  background: rgb(83, 58, 150);
+  background: linear-gradient(
+    180deg,
+    rgba(83, 58, 150, 1) 0%,
+    rgba(0, 207, 177, 1) 15%,
+    rgba(0, 207, 177, 1) 35%,
+    rgba(32, 227, 199, 1) 57%,
+    rgba(255, 180, 1, 1) 100%
+  );
   border-radius: 15px 0 0 15px;
   display: grid;
-  grid-template-areas: "title" "logo" "microfone";
-  grid-template-rows: 150px repeat(2, auto);
+  grid-template-areas: "title" "microfone";
+  grid-template-rows: 80px auto;
   width: 217px;
 }
 
 .podcast-banner .title-banner {
-  grid-area: title;
+  grid-area: microfone;
   display: flex;
   width: 100%;
   max-height: 180px;
   align-items: flex-start;
-  color: $white;
+  color: $mfm-roxo;
   font-size: 72px;
   font-weight: 900;
   font-style: italic;
@@ -118,7 +128,7 @@
   grid-row-end: 4;
   grid-column-start: 1;
   grid-column-end: 2;
-  margin-top: 90px;
+  margin-top: 120px;
   z-index: 2;
 }
 

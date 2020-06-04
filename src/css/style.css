@@ -602,6 +602,7 @@ header {
 /*Adsense
 **********/
 .adsense {
+  margin: 50px 0;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -2025,23 +2026,26 @@ input[type="range"]::-moz-focus-outer {
   width: 32px; }
 
 .podcast-banner {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
   grid-area: banner;
   grid-row-start: banner;
   grid-row-end: plataformas;
-  background: linear-gradient(90deg, #fff203, #e8b200);
+  background: #533a96;
+  background: linear-gradient(180deg, #533a96 0%, #00cfb1 15%, #00cfb1 35%, #20e3c7 57%, #ffb401 100%);
   border-radius: 15px 0 0 15px;
   display: grid;
-  grid-template-areas: "title" "logo" "microfone";
-  grid-template-rows: 150px repeat(2, auto);
+  grid-template-areas: "title" "microfone";
+  grid-template-rows: 80px auto;
   width: 217px; }
 
 .podcast-banner .title-banner {
-  grid-area: title;
+  grid-area: microfone;
   display: flex;
   width: 100%;
   max-height: 180px;
   align-items: flex-start;
-  color: #ffffff;
+  color: #6318af;
   font-size: 72px;
   font-weight: 900;
   font-style: italic;
@@ -2068,7 +2072,7 @@ input[type="range"]::-moz-focus-outer {
   grid-row-end: 4;
   grid-column-start: 1;
   grid-column-end: 2;
-  margin-top: 90px;
+  margin-top: 120px;
   z-index: 2; }
 
 .podcast-banner .microfone img {
