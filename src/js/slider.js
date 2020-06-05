@@ -31,6 +31,7 @@ export default {
         title: item.querySelector(".card-title").innerHTML,
         body: item.querySelector(".card-body").innerHTML,
         link: item.querySelector(".card-footer a").getAttribute("href"),
+        onclick: item.querySelector(".card-footer a").getAttribute("onclick"),
         target: item.querySelector(".card-footer a").getAttribute("target"),
         text: item.querySelector(".card-footer a").innerHTML,
       };
@@ -134,6 +135,7 @@ export default {
     this.cardTitle.innerHTML = this.dataCards[index].title;
     this.cardBody.innerHTML = this.dataCards[index].body;
     this.cardFooter.querySelector(".btn-card").setAttribute("href", this.dataCards[index].link);
+    this.cardFooter.querySelector(".btn-card").setAttribute("onclick", this.dataCards[index].onclick);
     this.cardFooter.querySelector(".btn-card").setAttribute("target", this.dataCards[index].target);
     this.log(this.dataCards[index].text);
     this.cardFooter.querySelector(".btn-card").innerHTML = this.dataCards[index].text;

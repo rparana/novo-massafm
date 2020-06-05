@@ -136,7 +136,17 @@
   }
 }
 @media (min-width: 768px) {
+  // .post-list {
+  //   min-width: 700px;
+  // }
+}
+@media (min-width: 1200px) {
   .post-list {
     min-width: 700px;
+  }
+}
+@media (min-width: 960px) {
+  .post-list {
+    min-width: 500px;
   }
 }

@@ -8,7 +8,11 @@
     <link type="image/x-icon" href="images/favicon.png" rel="shortcut icon" />
     <meta name="turbolinks-cache-control" content="no-cache" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js" data-turbolinks-eval="false"></script>
-    <script id="audients_script" src="https://app.audients.com.br/statics/list.js?fullscreen=null&onlyfirst=null"></script>
+    <script
+      id="audients_script"
+      src="https://app.audients.com.br/statics/hotsite.js?fullscreen=false&onlyfirst=false&hotsite=f576c88e-02a5-4207-88c8-d1b54726ef54&company=b240eca7-ad8a-4775-b144-0a999ccb697f&invisible=true"
+    ></script>
+    <script id="audients_script2" src="https://app.audients.com.br/statics/list.js?fullscreen=null&onlyfirst=null"></script>
 
     <script src="js/turbolinks.js" data-turbolinks-track="reload"></script>
     <script src="js/podcasts.js" data-turbolinks-eval="false"></script>
@@ -281,7 +285,13 @@
                   <p>Integer faucibus, risus et imperdiet lacinia, mauris mi varius tellus, et laoreet lorem justo vel magna.</p>
                 </div>
                 <div class="card-footer">
-                  <a href="#" class="btn-card">CLIQUE E PARTICIPE</a>
+                  <a
+                    href="#"
+                    onclick="openHotsite('e9b28446-ebd8-4424-bf9d-7800ef8a5bb1', 'b240eca7-ad8a-4775-b144-0a999ccb697f');"
+                    target=""
+                    class="btn-card"
+                    >CLIQUE E PARTICIPE</a
+                  >
                 </div>
               </div>
             </div>
@@ -1031,35 +1041,7 @@
           </div>
           <div class="card-body">
             <div class="form-style-material">
-              <form>
-                <!-- <div class="group">
-                  <input type="text" name="nome" id="nome" required />
-                  <span class="highlight"></span>
-                  <span class="bar"></span>
-                  <label>Nome</label>
-                </div>
-                <div class="group">
-                  <input
-                    type="tel"
-                    name="whatsapp"
-                    id="whatsapp"
-                    pattern="\(\d{3}\) \d{5}\-\d{4}"
-                    class="masked"
-                    title="10-digit number"
-                    required
-                  />
-                  <span class="highlight"></span>
-                  <span class="bar"></span>
-                  <label>WhatsApp</label>
-                </div>
-                <div class="group">
-                  <input type="text" name="musica" id="musica" required />
-                  <span class="highlight"></span>
-                  <span class="bar"></span>
-                  <label>Música</label>
-                </div> -->
-                <input type="submit" class="btn-card bnt-enviar" value="PEDIR" />
-              </form>
+              <button class="btn-card bnt-enviar" onclick="openFrame()">PEÇA AQUI</button>
             </div>
           </div>
         </div>

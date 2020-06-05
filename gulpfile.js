@@ -62,4 +62,6 @@ gulp.task(
   })
 );
 
+gulp.task("build", gulp.series("sass", "scripts"));
+
 gulp.task("default", gulp.series("sass", "watch"));

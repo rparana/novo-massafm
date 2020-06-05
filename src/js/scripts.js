@@ -131,6 +131,8 @@ function docReady() {
   checkCookie();
   slider.start();
   getPromotions();
+
+  contact();
 } //FIM doReady
 
 function addEvent(obj, event, func) {
@@ -404,4 +406,7 @@ function populatePromotionList(item) {
   box.appendChild(box_detail);
   node.appendChild(box); // Append the box to <li>
   promoList.appendChild(node); // Append <li> to <ul>
+}
+function contact() {
+  console.log("Desenvolvido por: Rafael Paraná \n Whatsapp/Telegram: (41) 99879-6809 \n E-mail/Skype: paranafael@yahoo.com.br");
 }

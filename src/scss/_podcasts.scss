@@ -106,6 +106,27 @@
   padding: 30px 0px 0px 30px;
 }
 
+.banner-destaque .content .title.podcast {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: unset;
+}
+
+.banner-destaque .content .title.podcast p {
+  font-size: 20px;
+  align-self: flex-end;
+  color: $mfm-laranja;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.banner-destaque .content .title.podcast h1 {
+  font-size: 72px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 50px;
+}
+
 .podcast-banner .logo {
   grid-area: logo;
   display: flex;
@@ -285,10 +306,14 @@
   padding: 10px;
   width: 100%;
 }
+
 .podcasts .card .card-content,
 .podcast-list ul li {
   display: flex;
   padding: 20px 0px;
+}
+
+.podcast-list ul li {
   border-bottom: 1px solid $mfm-cinza-claro;
 }
 
@@ -335,7 +360,7 @@
   }
   .podcast-box {
     grid-template-areas: "plataformas" "lista";
-    grid-template-rows: 100px auto;
+    grid-template-rows: 100px 80%;
     grid-template-columns: auto;
   }
   // .section-podcast .plataformas,
