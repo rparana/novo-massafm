@@ -54,6 +54,25 @@ gulp.task("scripts", function () {
   });
 });
 
+gulp.task("scriptLive", function () {
+  var js = ["src/js/live.js"];
+
+  js.map(function (entry) {
+    return browserify({
+      entries: [entry],
+    })
+      .transform(babelify, {
+        presets: [["env"]],
+      })
+      .bundle()
+      .pipe(source(entry))
+      .pipe(rename({ extname: ".min.js" }))
+      .pipe(buffer())
+      .pipe(uglify())
+      .pipe(gulp.dest(js_dist));
+  });
+});
+
 gulp.task(
   "watch",
   gulp.series(function () {
